@@ -141,8 +141,6 @@ TalkConfig
 	--
 	"\f[bold,1]Times petted:\f[bold,0] %(pets)\n\n"
 	--
-	"\f[bold,1]Last seen:\s[bold,0] %(lastSeen)\n\n"
-	--
 	"\f[bold,1]Talk Rate:\f[bold,0] - every %(talktime) \f[sup,1](\q[Change it,talkinter])\f[sup,0]\n\n"
 	--		
 	"\![*]\q[Back to the menu,BACKTOMENU]\e"

@@ -1,14 +1,14 @@
 charset,OSNative
 file,ghost/master/aitalk.dic55b4c56dcc2650260fd2a3d5d283d415size=27695date=2023-07-05T14:23:24
 file,ghost/master/anchor.dicde82b34b79ee9e31455a726397ad11b4size=4809date=2023-06-06T01:39:46
-file,ghost/master/bootend.dice5de445839debe5b01ddfdec0d5c29ebsize=31655date=2023-07-05T13:56:48
+file,ghost/master/bootend.dic2a58164fdd1af70e0ef3f734270bbdbcsize=31305date=2023-07-05T18:08:23
 file,ghost/master/brush.icoca69f80795d2057c357e977f6e28fd83size=1150date=2023-06-19T12:03:58
 file,ghost/master/commu.dicf501dbc69e81d78a53887a69e37b5dfbsize=6734date=2023-06-14T13:49:56
 file,ghost/master/descript.txt8f63704820749027bf8a8655042a1f20size=2625date=2023-06-19T11:57:32
 file,ghost/master/etc.dic1e491a5af3bd08086bdcf0d1c2ed6d0dsize=34757date=2023-07-05T14:20:30
 file,ghost/master/gomi.dll51fe9597398db01e684a0f9d52c63242size=13312date=2004-06-01T19:00:04
 file,ghost/master/mciaudior.dllb1082bccd2aac2017f7936baf2d967b3size=29696date=2003-03-13T15:23:26
-file,ghost/master/menu.dic0d8a4ee1fad260eb68a2d12be3915dbcsize=30952date=2023-07-05T14:17:04
+file,ghost/master/menu.dic4210f4966ee7dd45c83ddf9597a7c497size=30896date=2023-07-05T20:18:42
 file,ghost/master/mouse.dic24ff3debb210925411706c1b9bf3309bsize=9203date=2023-07-05T14:11:20
 file,ghost/master/nameteach.dic1621d4e7efaa432a3a591caaa7ebd488size=9877date=2023-06-07T12:03:50
 file,ghost/master/pictures/picture1.png0afe66ebc4dcb623e240b09dcacec4d4size=21749date=2023-06-26T01:39:30
@@ -19,7 +19,7 @@ file,ghost/master/pictures/picture5.png065a5ee1e57116eaf35b223dc86b95d8size=26
 file,ghost/master/pictures/picture6.pngfbc25db02e20cc8744b212d221c08277size=24362date=2023-06-26T01:58:12
 file,ghost/master/pictures/picture7.png9d97bdbfac4e6f19317a231a5e41b696size=25471date=2023-06-26T02:15:02
 file,ghost/master/saori_cpuid.dlld13370aee8e579fe2517d789dba7c45esize=225280date=2004-04-17T18:47:18
-file,ghost/master/string.dic6e49ccc0ea066cee2681359f53a38a79size=8421date=2023-07-05T15:10:02
+file,ghost/master/string.dic27d068ab2c0a46aba40d84e07c74fa83size=8416date=2023-07-05T20:17:18
 file,ghost/master/system/messagetxt/classical-chinese.txt82769639cb6060591d0797126ac5efabsize=5129date=2021-12-21T07:54:02
 file,ghost/master/system/messagetxt/english.txt5a11530a72b2e815b677c19dbd3fac03size=7112date=2021-12-21T07:54:02
 file,ghost/master/system/messagetxt/japanese.txted859fd30c66d2ad612c56ebe66324d2size=9190date=2021-12-21T07:54:04
@@ -121,7 +121,7 @@ file,shell/master/surface720.png5bc556a01916b3a68b6619461201acebsize=21871dat
 file,shell/master/surface750.pngedd33b9063c0a70ee20506f7331e4f2dsize=21433date=2023-06-12T15:08:14
 file,shell/master/surface751.pngc5d4972c2b49073cdd1323b2ef211d4asize=20722date=2023-06-12T21:11:18
 file,shell/master/surface752.pngb8e73d755ebabd9ebcfa7a85dd80bce6size=18870date=2023-06-12T21:35:26
-file,shell/master/surfaces.txt72184ea119a3228d6abd147dc14da65bsize=46411date=2023-06-12T14:00:42
+file,shell/master/surfaces.txtfaac34bc3dc99fbd460e30632c6163ebsize=46563date=2023-07-05T15:40:11
 file,shell/master/surfacetable.txt1ddc38e7c9929111cabec32e28d3e5basize=3037date=2021-05-05T03:09:40
 file,shell/master/thumbnail.png7972f6c11e743ff1819b32342bcd9f58size=3344date=2023-05-28T23:03:38
 file,thumbnail.png7972f6c11e743ff1819b32342bcd9f58size=3344date=2023-05-28T23:03:38

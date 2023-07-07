@@ -334,7 +334,7 @@ RandomTalk : nonoverlap_pool
 	}
 	if weekday == 5 //Friday
 	{
-		"\0\s[0]%(cf)Any big plans for the weekend? w\5I don't have any.\n\n[half]\w8\w6I'm pretty sure.\e"
+		"\0\s[0]%(cf)Any big plans for the weekend? \w5I don't have any.\n\n[half]\w8\w6I'm pretty sure.\e"
 	}
 	if weekday == 6 //Saturday
 	{

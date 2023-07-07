@@ -522,7 +522,7 @@ Select.HelpJoke
 
 Select.HowFont
 {
-	"\0\s[2]%(cf)I can talk in the Note This font! \s[0]As long as it's installed I should be able to use it! Make sure it's toggled on in the Config menu, and that it is actually installed on your machine.\e"
+	"\0\s[2]%(cf)I can talk in the Note This font, no matter what balloon you're using! \s[0]As long as it's installed I should be able to use it! Make sure it's toggled on in the Config menu, and that it is actually installed on your machine.\e"
 }
 
 

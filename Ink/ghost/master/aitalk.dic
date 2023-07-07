@@ -50,128 +50,128 @@ OnAiTalk
 RandomTalk : nonoverlap_pool
 {
 	
-	"\0\s[0]I really like the doodle-sphere, but it can get a bit lonely sometimes.\e"
+	"\0\s[0]%(cf)I really like the doodle-sphere, but it can get a bit lonely sometimes.\e"
 	
-	"\0\s[9]Got to remember to fill up my color vials next time I'm in the doodle-sphere.\e"
+	"\0\s[9]%(cf)Got to remember to fill up my color vials next time I'm in the doodle-sphere.\e"
 	
-	"\0\s[0]One upside of not having a soul is that monster magic doesn't really work on me.\e"
+	"\0\s[0]%(cf)One upside of not having a soul is that monster magic doesn't really work on me.\e"
 	
-	"\0\s[0]Classic Sans introduced me to quiches.\w8\s[5] Well, he explained what they were. \n\s[8]He forgot the one he was going to bring me under a bench somewhere.\e"
+	"\0\s[0]%(cf)Classic Sans introduced me to quiches.\w8\s[5] Well, he explained what they were. \n\s[8]He forgot the one he was going to bring me under a bench somewhere.\e"
 	
-	"\0\s[5]Sometimes I wonder if there's more to the doodle-sphere than I've seen. \nLike, could I access more than just AUs from there?\e"
+	"\0\s[5]%(cf)Sometimes I wonder if there's more to the doodle-sphere than I've seen. \nLike, could I access more than just AUs from there?\e"
 	
-	"\0\s[5]I wonder if Error would let me catch up on Undernovela with him?\n\s[12]If I can ask before he kicks me out, anyway.\e"
+	"\0\s[5]%(cf)I wonder if Error would let me catch up on Undernovela with him?\n\s[12]If I can ask before he kicks me out, anyway.\e"
 	
-	"\0\s[5]I don't remember the last time I saw %(names). Wonder what he's up to?\e"
+	"\0\s[5]%(cf)I don't remember the last time I saw %(names). Wonder what he's up to?\e"
 	
-	"\0\s[9]I'm running low on %(mediums)s.\e"
+	"\0\s[9]%(cf)I'm running low on %(mediums)s.\e"
 	
-	"\0\s[0]Sometimes I like to leave art supplies around in AUs.\w6 Usually kids find it, but older people find them too sometimes. \nI love seeing what everyone makes!\e"
+	"\0\s[0]%(cf)Sometimes I like to leave art supplies around in AUs.\w6 Usually kids find it, but older people find them too sometimes. \nI love seeing what everyone makes!\e"
 	
-	"\0\s[0]Sometimes I think about what kind of AU I could have originally come from.\e"
+	"\0\s[0]%(cf)Sometimes I think about what kind of AU I could have originally come from.\e"
 	
-	"\0\s[0]I've tried making myself food with my brush.\s[12] It doesn't usually work out very well.\e"
+	"\0\s[0]%(cf)I've tried making myself food with my brush.\s[12] It doesn't usually work out very well.\e"
 	
-	"\0\s[0]I experiment with what I can make with my brush sometimes. \s[8]Results have... varied.\e"
+	"\0\s[0]%(cf)I experiment with what I can make with my brush sometimes. \s[8]Results have... varied.\e"
 	
-	"\0\s[0]Sometimes I wish I could use makeup like Undyne and Mettaton.\w6\n\s[12]Unfortunately, I don't have eyelids.\w6 Or lips.\w6 Or skin.\e"
+	"\0\s[0]%(cf)Sometimes I wish I could use makeup like Undyne and Mettaton.\w6\n\s[12]Unfortunately, I don't have eyelids.\w6 Or lips.\w6 Or skin.\e"
 	
-	"\0\s[0]%(names) tried cleaning the ink off my face once. \s[12]It didn't work.\e"
+	"\0\s[0]%(cf)%(names) tried cleaning the ink off my face once. \s[12]It didn't work.\e"
 	
-	"\0\s[0]I'd get you a new sketchbook, but I don't think I would actually be able to give it to you.\e"
+	"\0\s[0]%(cf)I'd get you a new sketchbook, but I don't think I would actually be able to give it to you.\e"
 	
-	"\0\s[0]I'd get you some %(mediums)s, but I don't think I would be able to give them to you.\e"
+	"\0\s[0]%(cf)I'd get you some %(mediums)s, but I don't think I would be able to give them to you.\e"
 	
-	"\0\s[0]Why don't you take a minute to tidy up your space? I always find it a bit easier to think when there's not too much clutter.\e"
+	"\0\s[0]%(cf)Why don't you take a minute to tidy up your space? I always find it a bit easier to think when there's not too much clutter.\e"
 
-	"\0\s[9].\w3.\w3.\e"
+	"\0\s[9]%(cf).\w3.\w3.\e"
 
-	"\0\s[0]I try not to be too hard on anybody.\w8 I don't think I'd get anything done if I was!\e"
+	"\0\s[0]%(cf)I try not to be too hard on anybody.\w8 I don't think I'd get anything done if I was!\e"
 	
-	"\0\s[0]I've thought about bringing a pet to the doodle-sphere.\w8\s[12] I don't think I'd be able to stop it from going into any AUs, though, so I probably won't.\e"
+	"\0\s[0]%(cf)I've thought about bringing a pet to the doodle-sphere.\w8\s[12] I don't think I'd be able to stop it from going into any AUs, though, so I probably won't.\e"
 	
-	"\0\s[0]I've done my fair share of pranks in the past, but\s[6] I bet not many people can say they've pranked themselves.\e"
+	"\0\s[0]%(cf)I've done my fair share of pranks in the past, but\s[6] I bet not many people can say they've pranked themselves.\e"
 	
-	"\0\s[0]I've been asked what my favorite color is before.\w8 I dont' really have one, so I just say whatever is on my mind in the moment.\n\n[half]\s[2]Like right now I'd say %(colors)!\e"
+	"\0\s[0]%(cf)I've been asked what my favorite color is before.\w8 I dont' really have one, so I just say whatever is on my mind in the moment.\n\n[half]\s[2]Like right now I'd say %(colors)!\e"
 	
-	"\0\s[2]I hope new AUs never stop being created!\e"
+	"\0\s[2]%(cf)I hope new AUs never stop being created!\e"
 	
-	"\0\s[0]I'm actually glad I don't have skin. It means I can't get papercuts.\e"
+	"\0\s[0]%(cf)I'm actually glad I don't have skin. It means I can't get papercuts.\e"
 
-	"\0\s[0]Have you ever thought about...\w8\w8 Um...\w8\w8\n\n[half]\s[6]I forgot...\e"
+	"\0\s[0]%(cf)Have you ever thought about...\w8\w8 Um...\w8\w8\n\n[half]\s[6]I forgot...\e"
 	
-	"\0\s[0].\w4.\w4. \w8\w8\w8\w4\n\n[half]\s[6]I forgot what I was going to say.\e"
+	"\0\s[0]%(cf).\w4.\w4. \w8\w8\w8\w4\n\n[half]\s[6]I forgot what I was going to say.\e"
 	
-	"\0\s[5]Maybe I can add something new to the doodle-sphere...\e"
+	"\0\s[5]%(cf)Maybe I can add something new to the doodle-sphere...\e"
 	
-	"\0\s[0]Make sure you take a break once in a while, from whatever you're doing.\e"
+	"\0\s[0]%(cf)Make sure you take a break once in a while, from whatever you're doing.\e"
 	
-	"\0\s[0]I got a peek at what you were working on earlier. \s[2]It looks great!\e"
+	"\0\s[0]%(cf)I got a peek at what you were working on earlier. \s[2]It looks great!\e"
 
-	"\0\s[9].\w2.\w2.\w8\w8\w8\nWhat did I have to do again?\e"
+	"\0\s[9]%(cf).\w2.\w2.\w8\w8\w8\nWhat did I have to do again?\e"
 
-	"\0\s[0]%(names) and I had a movie marathon recently.\w8 It was fun, even though we have different preferences.\e"
+	"\0\s[0]%(cf)%(names) and I had a movie marathon recently.\w8 It was fun, even though we have different preferences.\e"
 
-	"\0\s[0]Don't forget to stretch!\e"
+	"\0\s[0]%(cf)Don't forget to stretch!\e"
 
-	"\0\s[5]I wonder if %(names) would like to try out some %(mediums)s?\e"
+	"\0\s[5]%(cf)I wonder if %(names) would like to try out some %(mediums)s?\e"
 
-	"\0\s[9]%(names)'s favorite color was %(colors), right?\e"
+	"\0\s[9]%(cf)%(names)'s favorite color was %(colors), right?\e"
 
-	"\0\s[0]I saw %(morenames) earlier as I was passing through.\e"
+	"\0\s[0]%(cf)I saw %(morenames) earlier as I was passing through.\e"
 
-	"\0\s[5]I should visit %(names)...\w6 It's been a while since I last saw him.\e"
+	"\0\s[5]%(cf)I should visit %(names)...\w6 It's been a while since I last saw him.\e"
 
-	"\0\s[9]Need to finish that...\e"
+	"\0\s[9]%(cf)Need to finish that...\e"
 
-	"\0\s[5]...\e"
+	"\0\s[5]%(cf)...\e"
 
-	"\0\s[5]I should find that book %(names) told me about...\e"
+	"\0\s[5]%(cf)I should find that book %(names) told me about...\e"
 
 
 	{
-		"\0\s[0]I've been thinking about trying out a new hobby.\w8\n\s[5]"
+		"\0\s[0]%(cf)I've been thinking about trying out a new hobby.\w8\n\s[5]"
 	--
-		"Maybe dance?"
-		"Maybe spray paint?"
-		"Maybe quilting?"
-		"Writing, maybe?"
-		"Maybe glass-blowing?"
-		"Maybe baking?"
-		"Maybe animation?"
-		"Composing, maybe?"
-		"Maybe bonsai? I'd have to find a bonsai tree first."
-		"Maybe sculpting?"
-		"Maybe cooking? I could probably get a Papyrus to teach me a thing or two."
-		"Maybe wood-carving?"
-		"Maybe photography?"
-		"Maybe knitting?"
-		"Maybe upcycling?"
+		"%(cf)Maybe dance?"
+		"%(cf)Maybe spray paint?"
+		"%(cf)Maybe quilting?"
+		"%(cf)Writing, maybe?"
+		"%(cf)Maybe glass-blowing?"
+		"%(cf)Maybe baking?"
+		"%(cf)Maybe animation?"
+		"%(cf)Composing, maybe?"
+		"%(cf)Maybe bonsai? I'd have to find a bonsai tree first."
+		"%(cf)Maybe sculpting?"
+		"%(cf)Maybe cooking? I could probably get a Papyrus to teach me a thing or two."
+		"%(cf)Maybe wood-carving?"
+		"%(cf)Maybe photography?"
+		"%(cf)Maybe knitting?"
+		"%(cf)Maybe upcycling?"
 	--
 	"\e"
 	}
 
 	{
-		"\0\s[0]%(names) asked me to help him try painting something the other day.\w8\n\n[half]" 
+		"\0\s[0]%(cf)%(names) asked me to help him try painting something the other day.\w8\n\n[half]" 
 	-- //opening dashes
-		"\s[12]Somehow his canvas caught fire..."
-		"\s[2]It was really fun!"
-		"\s[5]I'm not sure what exactly he was trying to make, \s[2]but it turned out really well!"
-		"\s[0]We traded at the end, \s[2]so now I have one of his paintings and he has one of mine!"
-		"\s[5]Maybe I can ask %(names) if he'd like to do something similar?"
-		"\s[2]He's quite the artist!"
+		"\s[12]%(cf)Somehow his canvas caught fire..."
+		"\s[2]%(cf)It was really fun!"
+		"\s[5]%(cf)I'm not sure what exactly he was trying to make, \s[2]but it turned out really well!"
+		"\s[0]%(cf)We traded at the end, \s[2]so now I have one of his paintings and he has one of mine!"
+		"\s[5]%(cf)Maybe I can ask %(names) if he'd like to do something similar?"
+		"\s[2]%(cf)He's quite the artist!"
 	-- //closing dashes
 		"\e" //dialogue ends
 	}
 	
 	{
-		"\0\s[0]I asked %(names) his thoughts on %(shapes)s. "
+		"\0\s[0]%(cf)I asked %(names) his thoughts on %(shapes)s. "
 	--
-		"\0\s[12]He just ignored me..."
+		"\0\s[12]%(cf)He just ignored me..."
 
-		"\0\s[0]He didn't have any particular opinions."
+		"\0\s[0]%(cf)He didn't have any particular opinions."
 
-		"\0\s[2]He said it was his favorite shape!"
+		"\0\s[2]%(cf)He said it was his favorite shape!"
 	--
 		"\e"
 	}
@@ -179,14 +179,14 @@ RandomTalk : nonoverlap_pool
 	
 	//Chains
 	
-	"\0\s[1]Oh! Idea!\w8\w8\s[4]\e:chain=achain"
+	"\0\s[1]%(cf)Oh! Idea!\w8\w8\s[4]\e:chain=achain"
 	
-	"\0\s[0]I've tried to prank some of the others who can travel between AUs before.\e:chain=anotherchain"
+	"\0\s[0]%(cf)I've tried to prank some of the others who can travel between AUs before.\e:chain=anotherchain"
 	
 
 	//Questions
 
-	"\0\s[5]Hey, %(username), I have a question for you.\w8\n\n[half]\![*]\q[Go ahead!,question1]\e" 
+	"\0\s[5]%(cf)Hey, %(username), I have a question for you.\w8\n\n[half]%(df)\![*]\q[Go ahead!,question1]\e" 
 	
 	//--If statements
 	//You can put if statements in RandomTalk! They don't even need Else statements, unless you want to keep two sets of statements completely separate - for example, you have one pool of conversations for when there are two characters, and one for if there are three characters. You wouldn't want these to overlap, so you'd put one pool in the if statement and the other in the else. Most of the time though, you won't need an Else statement for these, since they'll mostly only be adding in dialogue if the if statement is true. 
@@ -216,172 +216,172 @@ RandomTalk : nonoverlap_pool
 
 	if month == 1 //January
 	{
-		"\0\s[0]Enjoying the new year so far?\e"
+		"\0\s[0]%(cf)Enjoying the new year so far?\e"
 		
-		"\0\s[5]First month of the new year...\e"
+		"\0\s[5]%(cf)First month of the new year...\e"
 
-		"\0\s[0]Have any big plans this year?\w8\s[2] I'm \f[bold,true]pretty\f[bold,false] sure I don't have any.\e"
+		"\0\s[0]%(cf)Have any big plans this year?\w8\s[2] I'm \f[bold,true]pretty\f[bold,false] sure I don't have any.\e"
 	}
 	if month == 2 //February
 	{
-		"\0\s[0]Enjoying the new year so far?\e"
+		"\0\s[0]%(cf)Enjoying the new year so far?\e"
 		
-		"\0\s[0]Maybe I can build one more snowman before the weather gets warmer.\w8\n\s[5]Then again I could just visit a Snowdin anytime.\e"
+		"\0\s[0]%(cf)Maybe I can build one more snowman before the weather gets warmer.\w8\n\s[5]Then again I could just visit a Snowdin anytime.\e"
 
-		"\0\s[9]Was that this month, or next month?\e"
+		"\0\s[9]%(cf)Was that this month, or next month?\e"
 	}
 	if month == 3 //March
 	{
-		"\0\s[0]Are there any flowers blooming yet?\e"
+		"\0\s[0]%(cf)Are there any flowers blooming yet?\e"
 		
-		"\0\s[5]Maybe I can get some inspiration from the changing seasons...\e"
+		"\0\s[5]%(cf)Maybe I can get some inspiration from the changing seasons...\e"
 
-		"\0\s[0]I think %(names) said he was going to try growing some sort of plant.\w8\s[5] Dunno if he's still planning on it.\e"
+		"\0\s[0]%(cf)I think %(names) said he was going to try growing some sort of plant.\w8\s[5] Dunno if he's still planning on it.\e"
 	}
 	if month == 4 //April
 	{
-		"\0\s[11]Does it rain a lot during the spring where you are?\w6\s[0] I've heard it does in some places.\e"
+		"\0\s[11]%(cf)Does it rain a lot during the spring where you are?\w6\s[0] I've heard it does in some places.\e"
 		
-		"\0\s[0]Wow, we're already four months into the year. \s[2]Time sure does fly, huh?\e"
+		"\0\s[0]%(cf)Wow, we're already four months into the year. \s[2]Time sure does fly, huh?\e"
 
-		"\0\s[0]I like to take inspiration from flowers.\w8 \s[2]There are so many colors and shapes they can be!\e"
+		"\0\s[0]%(cf)I like to take inspiration from flowers.\w8 \s[2]There are so many colors and shapes they can be!\e"
 	}
 	if month == 5 //May
 	{
-		"\0\s[0]It's getting warmer outside.\e"
+		"\0\s[0]%(cf)It's getting warmer outside.\e"
 		
-		"\0\s[0]It's almost summertime, isn't it?\e"
+		"\0\s[0]%(cf)It's almost summertime, isn't it?\e"
 
-		"\0\s[0]I like to take inspiration from flowers.\w8 \s[2]There are so many colors and shapes they can be!\e"
+		"\0\s[0]%(cf)I like to take inspiration from flowers.\w8 \s[2]There are so many colors and shapes they can be!\e"
 	}
 	if month == 6 //June
 	{
-		"\0\s[12]I'll have to take my scarf off if it gets too hot.\e"
+		"\0\s[12]%(cf)I'll have to take my scarf off if it gets too hot.\e"
 
-		"\0\s[0]I like looking at different kinds of clouds. \s[2]It's like they all have different styles!\e"
+		"\0\s[0]%(cf)I like looking at different kinds of clouds. \s[2]It's like they all have different styles!\e"
 
-		"\0\s[0]I like to get snowcones when it's hot outside. \s[2]The best ones are usually from Snowdin.\e"
+		"\0\s[0]%(cf)I like to get snowcones when it's hot outside. \s[2]The best ones are usually from Snowdin.\e"
 	}
 	if month == 7 //July
 	{
-		"\0\s[0]I like to get snowcones when it's hot outside. \s[2]The best ones are usually from Snowdin.\e"
+		"\0\s[0]%(cf)I like to get snowcones when it's hot outside. \s[2]The best ones are usually from Snowdin.\e"
 
-		"\0\s[12]I'll have to take my scarf off if it gets too hot.\e"
+		"\0\s[12]%(cf)I'll have to take my scarf off if it gets too hot.\e"
 
-		"\0\s[5]Halfway through the year? A little more, maybe?\e"
+		"\0\s[5]%(cf)Halfway through the year? A little more, maybe?\e"
 	}
 	if month == 8 //August
 	{
-		"\0\s[0]I like all the cinnamon-scented things around this time of year.\e"
+		"\0\s[0]%(cf)I like all the cinnamon-scented things around this time of year.\e"
 
-		"\0\s[0]Fall colors are a nice pallate to work with.\e"
+		"\0\s[0]%(cf)Fall colors are a nice pallate to work with.\e"
 
-		"\0\s[0]Lot's of people make pies around this time of year. \w2I've tried to make some too, \s[2]and they actually turned out pretty well!\e"
+		"\0\s[0]%(cf)Lot's of people make pies around this time of year. \w2I've tried to make some too, \s[2]and they actually turned out pretty well!\e"
 	}
 	if month == 9 //September
 	{
-		"\0\s[0]I like all the cinnamon-scented things around this time of year. \e"
+		"\0\s[0]%(cf)I like all the cinnamon-scented things around this time of year. \e"
 		
-		"\0\s[2]The colors of the trees in the fall are so pretty!\e"
+		"\0\s[2]%(cf)The colors of the trees in the fall are so pretty!\e"
 
-		"\0\s[0]I made a big pile of leaves to jump into in an AU. \w2\s[6]I forgot which one though, so I guess I'll have to make another one later.\e"
+		"\0\s[0]%(cf)I made a big pile of leaves to jump into in an AU. \w2\s[6]I forgot which one though, so I guess I'll have to make another one later.\e"
 	}
 	if month == 10 //October
 	{
-		"\0\s[0]It's October. \s[1]Does that mean Inktober is happening soon?\e"
+		"\0\s[0]%(cf)It's October. \s[1]Does that mean Inktober is happening soon?\e"
 		
-		"\0\s[1]Halloween is soon! Can't wait to see everybody's costumes!\w3\s[3]\e"
+		"\0\s[1]%(cf)Halloween is soon! Can't wait to see everybody's costumes!\w3\s[3]\e"
 
-		"\0\s[2]I'm going to be carving some pumpkins with %(names) and %(names).\w4 I'm excited to see what they come up with!\e"
+		"\0\s[2]%(cf)I'm going to be carving some pumpkins with %(names) and %(names).\w4 I'm excited to see what they come up with!\e"
 	}
 	if month == 11 //November
 	{
-		"\0\s[0]Coming up on the end of the year.\e"
+		"\0\s[0]%(cf)Coming up on the end of the year.\e"
 		
-		"\0\s[0]It hasn't snowed yet in the doodle-sphere.\w8 Well, it doesn't snow there unless I make it snow, so I guess that makes sense.\e"
+		"\0\s[0]%(cf)It hasn't snowed yet in the doodle-sphere.\w8 Well, it doesn't snow there unless I make it snow, so I guess that makes sense.\e"
 
-		"\0\s[0]I hope you get some time to rest.\w8\s[12] This time of year always seems to keep people busy.\e"
+		"\0\s[0]%(cf)I hope you get some time to rest.\w8\s[12] This time of year always seems to keep people busy.\e"
 	}
 	if month == 12 //December
 	{
-		"\0\s[0]Sometimes I like bringing a blanket and hot chocolate back to the doodle-sphere. \w4\s[2]It's very cozy.\e"
+		"\0\s[0]%(cf)Sometimes I like bringing a blanket and hot chocolate back to the doodle-sphere. \w4\s[2]It's very cozy.\e"
 
-		"\0\s[0]I like making snowmen when I can. \w6\s[12]I've learned some people don't like having snowmen pop up in front of their houses though...\e"
+		"\0\s[0]%(cf)I like making snowmen when I can. \w6\s[12]I've learned some people don't like having snowmen pop up in front of their houses though...\e"
 	}
 
 	//These ifs check what day of the week it is.
 	if weekday == 0 //Sunday
 	{
-		"\0\s[0]Ready to start a new week? \w5I'm going to be keeping an eye on the AUs.\e"
+		"\0\s[0]%(cf)Ready to start a new week? \w5I'm going to be keeping an eye on the AUs.\e"
 	}
 	if weekday == 1 //Monday
 	{
-		"\0\s[0]Hope you've had a good start to the week, %(username)!\e"
+		"\0\s[0]%(cf)Hope you've had a good start to the week, %(username)!\e"
 	}
 	if weekday == 2 //Tuesday
 	{
-		"\0\s[2]Taco Tuesday!\w8 \s[11]Do you... have Taco Tuesdays here?\e"
+		"\0\s[2]%(cf)Taco Tuesday!\w8 \s[11]Do you... have Taco Tuesdays here?\e"
 	}
 	if weekday == 3 //Wednesday
 	{
-		"\0\s[0]Fresh and I started a tradition of sorts on Wednesdays.\w5 We call it \s[2]'Wacky Wednesdays'.\e"
+		"\0\s[0]%(cf)Fresh and I started a tradition of sorts on Wednesdays.\w5 We call it \s[2]'Wacky Wednesdays'.\e"
 		
-		"\0\s[2]It's the middle of the week!\e"
+		"\0\s[2]%(cf)It's the middle of the week!\e"
 	}
 	if weekday == 4 //Thursday
 	{
-		"\0\s[5]What day is it again?\e"
+		"\0\s[5]%(cf)What day is it again?\e"
 	}
 	if weekday == 5 //Friday
 	{
-		"\0\s[0]Any big plans for the weekend? w\5I don't have any.\n\n[half]\w8\w6I'm pretty sure.\e"
+		"\0\s[0]%(cf)Any big plans for the weekend? w\5I don't have any.\n\n[half]\w8\w6I'm pretty sure.\e"
 	}
 	if weekday == 6 //Saturday
 	{
-		"\0\s[12]Unfortunately, I don't have Saturdays off. \w8\s[5]Not that I have an official job or anything...\w8\nSo I guess I do technically have Saturdays off...\e"
+		"\0\s[12]%(cf)Unfortunately, I don't have Saturdays off. \w8\s[5]Not that I have an official job or anything...\w8\nSo I \s[2]guess I do technically have Saturdays off!\e"
 	}
 	
 
 	//These ifs check for the time of day as defined in bootend.dic. Do you remember the words used for each chunk of time in GetTimeSlot? These are the same words!
 	if timeslot == "earlymorning"
 	{
-		"\0\s[12]I've got a long day ahead of me... \w8\s[0]It probably wouldn't hurt if I stayed here a while though.\e"
+		"\0\s[12]%(cf)I've got a long day ahead of me... \w8\s[0]It probably wouldn't hurt if I stayed here a while though.\e"
 
-		"\0\s[0]Are you up to watch the sun rise? \w5\s[2]I like watching it change all the colors in the sky.\e"
+		"\0\s[0]%(cf)Are you up to watch the sun rise? \w5\s[2]I like watching it change all the colors in the sky.\e"
 	}
 	if timeslot == "morning"
 	{
-		"\0\s[0]I'm ready for the day!\e"
+		"\0\s[0]%(cf)I'm ready for the day!\e"
 	}
 	if timeslot == "lunch"
 	{
-		"\0\s[2]Lunch time!\w6\s[5] Maybe I can get myself a hot dog?\e"
+		"\0\s[2]%(cf)Lunch time!\w6\s[5] Maybe I can get myself a hot dog?\e"
 		
-		"\0\s[0]Don't forget lunch!\w4\s[6] I've done that before...\e"
+		"\0\s[0]%(cf)Don't forget lunch!\w4\s[6] I've done that before...\e"
 	}
 	if timeslot == "afternoon"
 	{
-		"\0\s[5]Maybe I can go for walk somewhere?\w8 \s[2]If it's nice outside, maybe you can too!\e"
+		"\0\s[5]%(cf)Maybe I can go for walk somewhere?\w8 \s[2]If it's nice outside, maybe you can too!\e"
 
-		"\0\s[0]I like looking at the sunlight coming through trees, it's very pretty. \s[2]Especially the patterns it makes on the ground!\e"
+		"\0\s[0]%(cf)I like looking at the sunlight coming through trees, it's very pretty. \s[2]Especially the patterns it makes on the ground!\e"
 	}
 	if timeslot == "evening"
 	{
-		"\0\s[0]Sometimes I do puzzles to wind down in the evening.\e"
+		"\0\s[0]%(cf)Sometimes I do puzzles to wind down in the evening.\e"
 
-		"\0\s[0]I always like drawing and watching the sun set.\w8 Well, \s[6]I get too absorbed in the drawing and don't actually watch the sun most of the time.\e"
+		"\0\s[0]%(cf)I always like drawing and watching the sun set.\w8 Well, \s[6]I get too absorbed in the drawing and don't actually watch the sun most of the time.\e"
 	}
 	if timeslot == "latenight"
 	{
-		"\0\s[0]It gets pretty quiet at night.\w8 It can be nice though.\e"
+		"\0\s[0]%(cf)It gets pretty quiet at night.\w8 It can be nice though.\e"
 
-		"\0\s[0]If the sky is clear maybe you can go star-gazing.\e"
+		"\0\s[0]%(cf)If the sky is clear maybe you can go star-gazing.\e"
 	}
 	if timeslot == "midnight"
 	{
-		"\0\s[0]Late night for you too, huh?\e"
+		"\0\s[0]%(cf)Late night for you too, huh?\e"
 
-		"\0\s[11]Do you get a lot of inspiration at night? \w6\s[0]I do sometimes, but \s[12]I usually just have to jot the idea down to use later.\e"
+		"\0\s[11]%(cf)Do you get a lot of inspiration at night? \w6\s[0]I do sometimes, but \s[12]I usually just have to jot the idea down to use later.\e"
 	}
 	
 	
@@ -404,29 +404,29 @@ RandomTalk : nonoverlap_pool
 //--Chains
 achain
 {{CHAIN
-	"\0\s[4]Would you like to see what I've been working on? Give me a minute, I'm almost done.\e"
+	"\0\s[4]%(cf)Would you like to see what I've been working on? Give me a minute, I'm almost done.\e"
 
-	"\0\s[0]All done! Take a look! \w6 \_b[%(pictures),35,15]\e:chain=end"
+	"\0\s[0]%(cf)All done! Take a look! \w6 \_b[%(pictures),35,15]\e:chain=end"
 }}CHAIN
 
 
 anotherchain
 {{CHAIN
-	"\0\s[2]Some thought it was pretty funny.\w8 \s[8]Others, not so much.\e"
+	"\0\s[2]%(cf)Some thought it was pretty funny.\w8 \s[8]Others, not so much.\e"
 	
-	"\0\s[12]I got dunked in an lake for that.\e:chain=end"
+	"\0\s[12]%(cf)I got dunked in an lake for that.\e:chain=end"
 }}CHAIN
 
 
 Select.question1
 {
 
-		"\0\s[0]Would you mind if I took inspiration from you for something to draw?"
+		"\0\s[0]%(cf)Would you mind if I took inspiration from you for something to draw?"
 		--
 		"\n\n[half]"
 		--
 		{
-			"\![*]\q[Not at all!,notatall]\n/
+			"%(df)\![*]\q[Not at all!,notatall]\n/
 			\![*]\q[Actually I would.,actuallywould]"
 		}
 		--
@@ -437,15 +437,15 @@ Select.question1
 
 Select.notatall
 {
-	"\0\s[2]Thanks! You're the best!\e"
-	"\0\s[0]I'll do you proud!\e"
-	"\0\s[2]Thanks! \s[0]I just really admire your asthetic.\e"
+	"\0\s[2]%(cf)Thanks! You're the best!\e"
+	"\0\s[0]%(cf)I'll do you proud!\e"
+	"\0\s[2]%(cf)Thanks! \s[0]I just really admire your asthetic.\e"
 }
 
 Select.actuallywould
 {
-	"\0\s[0]Well, can't blame me for asking.\e"
-	"\0\s[0]Ah, well. \s[2]Guess I'll have to look elsewhere!\e"
+	"\0\s[0]%(cf)Well, can't blame me for asking.\e"
+	"\0\s[0]%(cf)Ah, well. \s[2]Guess I'll have to look elsewhere!\e"
 }
 
 //-OnMinuteChange
@@ -483,14 +483,14 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 	{
  		if hour == 12 //And the hour equals 12, meaning it's noon. You can change this to some other hour if you want.
 		{
- 			"\0\s[0]It's noon.\w8\w8\n\s[5]12PM is noon, not midnight, right?\e"
+ 			"\0\s[0]%(cf)It's noon.\w8\w8\n\s[5]12PM is noon, not midnight, right?\e"
 			//Replace with appropriate dialogue as you want.
 		}
  		elseif hour == 0 //If the hour is zero, aka midnight. Again, you can change this to whatever hour you want to check for. This section is flexible! You can also add more elseifs if you want to check for other hours.
 		{
- 			"\0\s[0]It's midnight!\e"
- 			"\0\s[0]You up to something?\w8 I hope so, or else you've probably fell asleep already, and I'm talking to noone.\e"
- 			"\0\s[0]Staying up late tonight, huh?\e"
+ 			"\0\s[0]%(cf)It's midnight!\e"
+ 			"\0\s[0]%(cf)You up to something?\w8 I hope so, or else you've probably fell asleep already, and I'm talking to noone.\e"
+ 			"\0\s[0]%(cf)Staying up late tonight, huh?\e"
 		}
 		else
 		{
@@ -501,7 +501,7 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 	//You can also check for more specific times! For example...
 	elseif hour == 23 && minute == 55 //this checks to see if the hour is 23 and the minutes are at 55... essentially, 11:55 pm.
 	{
-		"\0\s[0]5 minutes to midnight!\n Just letting you know in case you lost track of time, \s[6]I do that way too often.\e"
+		"\0\s[0]%(cf)5 minutes to midnight!\n Just letting you know in case you lost track of time, \s[6]I do that way too often.\e"
 		//Replace with what you like!
 	}
 
@@ -555,7 +555,7 @@ OnSecondChange
  
 MikireTalk
  {
-	"\0\s[0]Hey, I'm off the screen.\w8\n\s[11]Could you bring me back please?\e"
+	"\0\s[0]%(cf)Hey, I'm off the screen.\w8\n\s[11]Could you bring me back please?\e"
 	//You can push Ctrl-Shift-F12 to bring me back.
 	//Note the hotkey combo Triangle mentions. He's telling the truth, that should bring her back on the screen.
  }
@@ -565,7 +565,7 @@ MikireTalk
  
 EndMikireTalk
  {
-	"\0\s[2]Hooray! I'm no longer off the screen!\w8\w8\s[0]\w8\w8\w8\n\n[half]Oh, thank you for bringing me back.\e"
+	"\0\s[2]%(cf)Hooray! I'm no longer off the screen!\w8\w8\s[0]\w8\w8\w8\n\n[half]Oh, thank you for bringing me back.\e"
  }
 
 

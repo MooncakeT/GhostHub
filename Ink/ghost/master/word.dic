@@ -36,7 +36,9 @@
 	  
 	cf
 	{
-		"\f[name,Note this]\f[height,16]"
+		if useFont == 1{
+			"\f[name,Note this]\f[height,16]"
+		}
 	}
 		
 		//And then I can make one that'll change the font back to normal.

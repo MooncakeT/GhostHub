@@ -21,19 +21,19 @@ OnFileDrop2
 		{
 			Wallpaperfile = reference0
 			
-			"\0\s[0]The file you gave me is %(_filename)%(_fileext).\w8 How would you like me to set up this picture as your wallpaper?\n\n[half]/
-			\![*]\q[Centered,SetWallpaper_0]\n/
+			"\0\s[0]%(cf)You gave me %(_filename)%(_fileext).\w8 I assume you'd like to put this up as your wallpaper, so how should I put it up?\n\n[half]/
+			%(df)\![*]\q[Centered,SetWallpaper_0]\n/
 			\![*]\q[Tiled,SetWallpaper_1]\n/
 			\![*]\q[Stretched,SetWallpaper_2]\n\n[half]/
 			\![*]\q[No thanks,SetWallpaper_Cancel]\e"
 		}
 		when ".mid", ".wav", ".mp3", ".wma", ".au" //Other file formats you might want to give your ghost a specific response to.
 		{
-			"\0\s[0]%(_filename)%(_fileext) is a music file. I can't do anything with it, \s[2]but it looks like a good song!\e"
+			"\0\s[0]%(cf)%(_filename)%(_fileext) is a music file. I can't do anything with it, \s[2]but it looks like a good song!\e"
 		}
 		others //Any other file format. As a note here, if you drop something ghost-related on them that does not have an install.txt, then they won't install it and will just say this response. If you are testing your balloon or nar files and you get this response instead of a proper installation, you should check and make sure you have an install.txt in the file!
 		{
-			"\0\s[0]Sorry, can't do anything with %(_filename)%(_fileext)!\e"
+			"\0\s[0]%(cf)Sorry, I can't do anything with %(_filename)%(_fileext)!\e"
 		}
 	}
 }
@@ -42,19 +42,19 @@ OnFileDrop2
 
 Select.SetWallpaper_0
 {
-	"\![set,wallpaper,%(Wallpaperfile),center]\0\s[0]I put the image as your wallpaper.\e"
+	"\![set,wallpaper,%(Wallpaperfile),center]\0\s[0]%(cf)I put the picture up as your wallpaper. \s[2]Looks good!\e"
 }
 Select.SetWallpaper_1
 {
-	"\![set,wallpaper,%(Wallpaperfile),tile]\0\s[0]I put the image is tiled.\e"
+	"\![set,wallpaper,%(Wallpaperfile),tile]\0\s[0]%(cf)I made the picture tiled.\e"
 }
 Select.SetWallpaper_2
 {
-	"\![set,wallpaper,%(Wallpaperfile),stretch]\0\s[0]The image is stretched.\e"
+	"\![set,wallpaper,%(Wallpaperfile),stretch]\0\s[0]%(cf)The picture is stretched.\e"
 }
 Select.SetWallpaper_Cancel
 {
-	"\0\s[0]You don't want to set the file as your desktop background? Okie dokie!\e"
+	"\0\s[11]%(cf)Oh? Does that mean this is for me?\w8 \s[1]Thank you, thank you! \s[2]I'll hang it up in the doodle-sphere when I get back!\e"
 }
 
 
@@ -63,7 +63,7 @@ Select.SetWallpaper_Cancel
  
 OnInstallBegin
  {
-	"\0\s[2]This is a file I can install!\w8\s[0] I'll go ahead and do that for you.\e"
+	"\0\s[2]%(cf)This is a file I can install!\w8\s[0] I'll go ahead and do that for you.\e"
  }
 
  //---- OnInstallComplete -------------------------------------------------------
@@ -77,43 +77,43 @@ OnInstallComplete
  	{	
 		if reference1 == "underverse" //This is the name of your shell as you defined in descript.txt in the shell folder.
 		{
-			"\s[0]I have installed my Underverse Shell.\w8\s[1] I want to try it on!\e"
+			"\s[0]%(cf)I have installed my Underverse Shell.\w8\s[1] I want to try it on!\e"
 		}
 		else //For any other shell they may install.
 		{
-			"\s[0]I've installed a new shell!\w8 It's called  %(reference1).\n\s[2]Is it for me?\e"
+			"\s[0]%(cf)I'm done installing a new shell!\w8 It's called  %(reference1).\n\s[2]Is it for me?\e"
 		}
  	}
 	elseif reference0 == "ghost" //if the type of the file they're installing is a ghost.
  	{
-		"\s[0]All done installing the new Ghost!\w8 It's called %(reference1).\e"
+		"\s[0]%(cf)All done installing the new Ghost!\w8 The nametag says %(reference1).\e"
 		//Reference1 here would be the name of the ghost. Replace as needed.
  	}
 	elseif reference0 == "balloon" //if the type of file is a balloon
  	{
-		"\s[0]All done installing the new balloon!\w8 It's called %(reference1). Can I try it pleeeaase?\e"
+		"\s[0]%(cf)All done installing the new balloon!\w8 It's called %(reference1). Can I try it pleeeaase?\e"
 		//Reference1 here would be the name of the balloon. Replace as needed.
  	}
 	elseif reference0 == "plugin" //if the type of file is a plug-in, like a saori of some kind.
  	{
-		"\s[0]I've installed a plug-in.\w8 It's called %(reference1).\e"
+		"\s[0]%(cf)I've installed a plug-in.\w8 It's called %(reference1).\e"
 		//Reference1 here would be the name of the plug-in. Replace as needed.
  	}
 	elseif reference0 == "calendar skin" //if the type of file is a calendar skin
 	{
-		"\s[0]I finished installed the new calendar skin!\w8 It's called %(reference1)."
+		"\s[0]%(cf)I finished installed the new calendar skin!\w8 It's called %(reference1)."
 	}
 	elseif reference0 == "headline" //if the file/url you drop on them is counted as a headline. To be honest with you I don't know what determines whether a url is a headline or what.
 	{
-		"\0\s[0]I've set up a headline.\w8 It's called %(reference1).\e"
+		"\0\s[0]%(cf)I've set up a headline.\w8 It's called %(reference1).\e"
 	}
 	elseif reference0 == "rss" //this is more clearly for when you drag an rss feed onto your ghost. you can find rss feeds on sites by looking for the little rss icon, it kind of looks like a little satellite. you can google more info on rss feeds if you're curious!
 	{
-		"\0\s[0]I've set up a headline.\w8 It's called %(reference1).\e"
+		"\0\s[0]%(cf)I've set up a headline.\w8 It's called %(reference1).\e"
 	}
 	else //for any other file they'd install
 	{
-		"\s[0]I installed %(reference1)."
+		"\s[0]%(cf)I installed %(reference1)."
 	}
 }
 
@@ -122,16 +122,16 @@ OnInstallComplete
 
 OnInstallFailure
  {
-	"\0\s[7]Sorry, I couldn't install it.\n\n[half]\w5" //this first bit of dialogue begins the explanation of what happened. You can replace this with an appropriate intro statement.
+	"\0\s[7]%(cf)Sorry, I couldn't install it.\n\n[half]\w5" //this first bit of dialogue begins the explanation of what happened. You can replace this with an appropriate intro statement.
 	--
 	if reference0 == "unsupported" //These if statements determine how it happened to finish the piece of dialogue. This checks if the reason it failed is because it was unsupported.
 	{
-	"This kind of file is unsupported.\e"
+	"%(cf)This kind of file is unsupported.\e"
 	//Replace with whatever dialogue for an unsupported file you may come up with.
 	}	
 	elseif reference0 == "extraction" //This checks if the file didn't extract properly.
 	{
-	"The file could not be extracted properly.\e"
+	"%(cf)The file could not be extracted properly.\e"
 	//See above but for a failed extraction.
 	}
  }
@@ -141,7 +141,7 @@ OnInstallFailure
  
 OnInstallRefuse
  {
-	"\0\s[0]I can't install this. \w4Maybe try it with %(reference0) instead?\e"
+	"\0\s[0]%(cf)I can't install this. \w4Maybe try it with %(reference0) instead?\e"
 	
 	//reference0 in this function refers to the ghost this file is associated with, probably the name of the ghost listed in its install.txt file. You would see this if you dropped a shell made for a different ghost on your current ghost, for example. They can't install a shell for themselves they can't use, right? Anyway, replace this with what you wish, you can use the reference0 envelope or not if you want.
  }
@@ -156,7 +156,7 @@ OnInstallRefuse
 
 OnVanishSelecting
 {
-	"\0\s[0]I'm getting uninstalled?\w8 I can just go back to the doodle-sphere instead you know!\e"
+	"\0\s[0]%(cf)I'm getting uninstalled?\w8 I can just go back to the doodle-sphere instead you know!\e"
 }
 
 //OnVanishSelected
@@ -164,7 +164,7 @@ OnVanishSelecting
 
 OnVanishSelected
 {
-	"\0\s[0]Aw, guess this is goodbye then.\w9\w9\e"
+	"\0\s[0]%(cf)Aw, guess this is goodbye then.\w9\w9\e"
 }
 
 
@@ -173,7 +173,7 @@ OnVanishSelected
 
 OnVanishCancel
 {
-	"\0\s[0]I'm not getting uninstalled?\w8\nYay! I like hanging out here.\e"
+	"\0\s[0]%(cf)I'm not getting uninstalled?\w8\nYay! I like hanging out here.\e"
 }
 
 //--OnVanishButtonHold
@@ -181,7 +181,7 @@ OnVanishCancel
 
 OnVanishButtonHold
 {
-	"\0\s[0]Oh, did you click that by mistake?\e"
+	"\0\s[0]%(cf)Oh, did you click that by mistake?\e"
 }
 
 
@@ -190,7 +190,7 @@ OnVanishButtonHold
  
 OnVanished
  {
-	"\0\s[0]%(reference0) has been uninstalled.\w8 But don't worry! I'm still here to keep you company!\e"
+	"\0\s[0]%(cf)%(reference0) has been uninstalled.\w8 But don't worry! I'm still here to keep you company!\e"
 	
 	//reference0 here is the name of the other ghost.
 }
@@ -214,9 +214,9 @@ OnVanished
  
 OnBIFFBegin
  {
-	"\0\s[0]Ooo, email. I don't have one of those, but it seems useful!\e"
+	"\0\s[0]%(cf)Ooo, email. I don't have one of those, but it seems useful!\e"
 	
-	"\0\s[0]Sure, I'll see if there's anything new!\e"
+	"\0\s[0]%(cf)Sure, I'll see if there's anything new!\e"
  }
 
  
@@ -227,24 +227,24 @@ OnBIFFComplete
  {
 	if reference0 == 0 //If you have no new mail.
  	{
- 		"\0\s[0]Nothing new!\e"
+ 		"\0\s[0]%(cf)Nothing new!\e"
 	}
 	elseif reference0 == 1 //If you have one new email.
  	{
- 		"\0\s[0]You have one new email.\e"
+ 		"\0\s[0]%(cf)You have one new email.\e"
 	}
 	elseif reference0 > 1 && reference0 < 11 //If you have more than one email but less than eleven.
 	{
-		"\0\s[0]There are %(reference0) emails. Lucky you!\e"
+		"\0\s[0]%(cf)There are %(reference0) emails. Lucky you!\e"
 		//reference0 here stores the amount of new email it finds.
 	}
 	elseif reference0 > 100 //If there are over one hundred new emails.
 	{
-		"\0\s[0]There are %(reference0) unread emails.\w8 Woah, that's a lot.\e"
+		"\0\s[0]%(cf)There are %(reference0) unread emails.\w8 Woah, that's a lot.\e"
 	}
  	else //For any other number of emails.
 	{
-		"\0\s[0]You have %(reference0) emails.\e"
+		"\0\s[0]%(cf)You have %(reference0) emails.\e"
  	}
 }
 
@@ -255,21 +255,21 @@ OnBIFFFailure
  {
 	if reference0 == "timeout" //If the connection times out.
  	{
- 		"\0\s[0]I couldn't check, sorry! The connection has timed out.\e"
+ 		"\0\s[0]%(cf)I couldn't check, sorry! The connection has timed out.\e"
 	}
  	elseif reference0 == "kick" //If the account blocks the ghost from accessing it. I think gmail may do this at first to try and protect your account from unapproved applications using it. It gives you the option to change the setting in the warning email they send you about it.
 	{
-		"\0\s[0]I can't access that account.\e"
+		"\0\s[0]%(cf)I can't access that account.\e"
  	}
 	elseif reference0 == "defect" //If the information put into the POP menu is wrong.
  	{
- 		"\0\s[0]Looks like you didn't set up the email properly. You can set it up here!\w8\![open,configurationdialog]\e"
+ 		"\0\s[0]%(cf)Looks like you didn't set up the email properly. You can set it up here!\w8\![open,configurationdialog]\e"
 		
 		//Note that this ends with \![open,configurationdialog]. This will open up the preferences menu I described above automatically. More on \! functions in the walkthrough. You can delete the \! tag here if you want to.
 	}
  	else //if there's some other kind of error.
 	{
-		"\0\s[0]I can't connect to the account.\w8 The error returned is '%(reference[0])'.\e"
+		"\0\s[0]%(cf)I can't connect to the account.\w8 The error returned is '%(reference[0])'.\e"
 		
 		//reference0 here stores the error message the email server would have given the ghost, hopefully.
  	}
@@ -287,9 +287,9 @@ OnBIFFFailure
  
 OnUpdateBegin
  {
-	"\0\s[0]I'm getting an update? Yipee!\w8\e"
+	"\0\s[0]%(cf)I'm getting an update? Yipee!\w8\e"
 	
-	"\0\s[0]I'm starting an update! Hopefully it doesn't take too long!\w8\e"
+	"\0\s[0]%(cf)I'm starting an update! Hopefully it doesn't take too long!\w8\e"
  }
 
  //---- OnUpdateReady ---------------------------------------------------------
@@ -300,7 +300,7 @@ OnUpdateReady
  
 	reference0++ //makes sure it starts at 1 instead of 0
 	
-    "\0\s[0]There are %(reference0) new files.\w8\e"
+    "\0\s[0]%(cf)There are %(reference0) new files.\w8\e"
 	
 	//reference0 here storing the number of new files. You don't have to use it if you don't want to.
  }
@@ -313,13 +313,13 @@ OnUpdateComplete
  {
 	if reference0 == "none" //if the ghost had nothing to update with
  	{
- 		"\0\s[0]There's nothing for me to update with, silly!\e"
+ 		"\0\s[0]%(cf)There's nothing for me to update with, silly!\e"
 		
-		"\0\s[0]Sorry, I can't update right now.\e"
+		"\0\s[0]%(cf)Sorry, there's nothing to update right now.\e"
 	}
  	else //if the ghost has updated successfully
 	{
-		"\0\s[0]I've updated successfully!\e"
+		"\0\s[0]%(cf)I've updated successfully!\e"
  	}
 }
 
@@ -333,15 +333,15 @@ OnUpdateFailure
 	 
 	if reference0 == "timeout" //if the connection times out
  	{
- 		"\0\s[0]The update connection has timed out.\e"
+ 		"\0\s[0]%(cf)The update connection has timed out.\e"
 	}
  	elseif reference0 == "md5 miss" //This is the final message displayed when you've run into an md5 error below at some point.
 	{
-		"\0\s[0]The MD5 hash of %(_file) doesn't match.\e"
+		"\0\s[0]%(cf)The MD5 hash of %(_file) doesn't match.\e"
  	}
 	else //for other errors
  	{
- 		"\0\s[0]I couldn't finish the update.\w8 The error is '%(reference0)'.\e"
+ 		"\0\s[0]%(cf)I couldn't finish the update.\w8 The error is '%(reference0)'.\e"
 	}
  }
 
@@ -354,13 +354,13 @@ OnUpdate.OnDownloadBegin
  {
  	if "aitalk" _in_ reference0 //this is checking to see what kind of files are being downloaded. In this case, it's looking for files called aitalk in the download queue. If you want to have a specialized bit of dialogue for each type of file, you can expand this with elseifs and by replacing aitalk with whatever file you have in mind. Keep in mind my warning above though.
  	{
- 		"\0\s[0]I'm going to download more things to say.\w8\e"
+ 		"\0\s[0]%(cf)I'm going to download more things to say.\w8\e"
  	}
  	else //for files not specified above
  	{
-	"\0\s[0]I'm going to get a new file!\e"
+	"\0\s[0]%(cf)I'm going to get a new file!\e"
 	
-	"\0\s[0]A new file! I wonder what it is?\e"
+	"\0\s[0]%(cf)A new file! I wonder what it is?\e"
 	}
  }
 
@@ -369,7 +369,7 @@ OnUpdate.OnDownloadBegin
  
 OnUpdate.OnMD5CompareBegin
  {
-	"\0\s[0]Checking the MD5 value.\e"
+	"\0\s[0]%(cf)Checking the MD5 value.\e"
  }
 
  //---- OnUpdate.OnMD5CompareComplete --------------------------------------------------
@@ -377,7 +377,7 @@ OnUpdate.OnMD5CompareBegin
  
 OnUpdate.OnMD5CompareComplete
  {
-	"\0\s[0]MD5 check good.\e"
+	"\0\s[0]%(cf)MD5 check good.\e"
 }
 
  //---- OnUpdate.OnMD5CompareFailure ---------------------------------------------------
@@ -385,7 +385,7 @@ OnUpdate.OnMD5CompareComplete
  
 OnUpdate.OnMD5CompareFailure
  {
-	"\0\s[0]The MD5 values don't match.\w8\e"
+	"\0\s[0]%(cf)The MD5 values don't match.\w8\e"
  }
 
  
@@ -400,7 +400,7 @@ OnUpdate.OnMD5CompareFailure
  
 OnHeadlinesenseBegin
  {
-	"\0\s[0]You've selected %(reference0).\e"
+	"\0\s[0]%(cf)You've selected %(reference0).\e"
  }
 
  //---- OnHeadlinesense.OnFind --------------------------------------------------------
@@ -463,19 +463,19 @@ OnHeadlinesenseComplete
  
 OnHeadlinesenseFailure
   {
-	"\0\s[0]The feed can't updated.\w8 "
+	"\0\s[0]%(cf)The feed can't updated.\w8 "
  	--
 	if reference0 == "can't download" //if they can't download the rss feed for some reason
  	{
-		"It can't be downloaded."
+		"%(cf)It can't be downloaded."
  	}
 	elseif reference0 == "can't analyze" //if they can't read the file for some reason
  	{
-		"It can't be analyzed."
+		"%(cf)It can't be analyzed."
  	}
 	else //other errors
  	{
-		"I'm not sure why."
+		"%(cf)I'm not sure why."
  	}
 	--
  	"\e" //And here is the final /e, so you don't need to include it in the if statements above. Another one of the very rare cases this occurs.
@@ -492,7 +492,7 @@ OnHeadlinesenseFailure
  
 OnUpdatedataCreating
  {
-	"\0\s[0]Creating the updates2.dau file.\e"
+	"\0\s[0]%(cf)Creating the updates2.dau file.\e"
  }
 
  //---- OnUpdatedataCreated -------------------------------------------------------------
@@ -500,7 +500,7 @@ OnUpdatedataCreating
  
 OnUpdatedataCreated
  {
-	"\0\s[0]Successfully created updates2.dau.\e"
+	"\0\s[0]%(cf)Successfully created updates2.dau.\e"
  }
 
  //---- OnNarCreating ------------------------------------------------------------------
@@ -508,7 +508,7 @@ OnUpdatedataCreated
  
 OnNarCreating
  {
-	"\0\s[0]Creating the .nar file.\e"
+	"\0\s[0]%(cf)Creating the .nar file.\e"
  }
 
  //---- OnNarCreated -------------------------------------------------------------------
@@ -516,7 +516,7 @@ OnNarCreating
  
 OnNarCreated
  {
-	"\0\s[0]Successfully created '%(reference0)'.\e"
+	"\0\s[0]%(cf)Successfully created '%(reference0)'.\e"
 	//reference0 here will be the filename of the nar you just created. It should drop the nar in the folder where all your ghosts are listed, ssp\ghost\.
  }
 
@@ -531,7 +531,7 @@ OnNarCreated
  
 OnSNTPBegin
  {
-	"\0\s[0]I'm going to check the time.\w9 Connecting to %(reference0)...\e"
+	"\0\s[0]%(cf)I'm going to check the time.\w9 Connecting to %(reference0)...\e"
 	//%(reference0) here is the site they'll be using to check your clock. I wouldn't worry too much about what the site is or where it's defined, it should be accurate. Replace the dialogue with what you need, you don't have to use reference0 if you don't want to.
  }
 
@@ -547,12 +547,12 @@ OnSNTPCompare
 	--
  	if reference3 == 0 //if your clock is already accurate.
 	{
- 		"\0\s[0]Your clock is accurate.\e" //replace this with whatever message you like.
+ 		"\0\s[0]%(cf)Your clock is accurate.\e" //replace this with whatever message you like.
 	}
  	else //if your clock doesn't match
 	{
 	//you can redo this top line up to the \n\n[half] part, but leave the \q options alone.
- 		"\0\s[0]Your clock doesn't match.\w6\nShould I fix it for you?\n\n[half]/
+ 		"\0\s[0]%(cf)Your clock doesn't match.\w6\nShould I fix it for you?\n\n[half]/
 		\![*]\q[Fix it,OnSNTPEXECUTE]\n/
  		\![*]\q[Leave it alone,OnSNTPCANCEL]\e"
 	}
@@ -563,7 +563,7 @@ OnSNTPCompare
  
 OnSNTPEXECUTE
  {
-	"\0\s[0]Your clock has been fixed! A job well done if I do say so myself.\6\e"
+	"\0\s[0]%(cf)Your clock has been fixed! A job well done if I do say so myself.\6\e"
  }
 
  //----　OnSNTPCANCEL ------------------------------------------------------------------
@@ -571,7 +571,7 @@ OnSNTPEXECUTE
  
 OnSNTPCANCEL
  {
-	"\0\s[0]Okie dokie, I'll leave it alone.\e"
+	"\0\s[0]%(cf)Okie dokie, I'll leave it alone.\e"
  }
 
  //----　OnSNTPFailure ------------------------------------------------------------------
@@ -579,7 +579,7 @@ OnSNTPCANCEL
  
 OnSNTPFailure
  {
-	"\0\s[6]Something went wrong, I couldn't fix your clock. Sorry!\e"
+	"\0\s[6]%(cf)Something went wrong, I couldn't fix your clock. Sorry!\e"
  }
 
 
@@ -600,7 +600,7 @@ OnDisplayChange
  
 OnScreenSaverStart
  {
-	"\0\s[0]The screensaver is starting.\w7 Wiggle your mouse!\e"
+	"\0\s[0]%(cf)The screensaver is starting.\w7 Wiggle your mouse!\e"
 	//Replace with what you want.
  }
 
@@ -609,7 +609,7 @@ OnScreenSaverStart
  
 OnScreenSaverEnd
  {
-	"\0\s[0]The screensaver is gone.\e"
+	"\0\s[0]%(cf)The screensaver is gone.\e"
 	//Replace with what you want.
  }
 
@@ -619,7 +619,7 @@ OnScreenSaverEnd
  
 OnApplicationBoot
  {
-	"\0\s[0]%(reference0) just started.\e"
+	"\0\s[0]%(cf)%(reference0) just started.\e"
  }
 
  //---- OnApplicationClose --------------------------------------------------------------
@@ -627,7 +627,7 @@ OnApplicationBoot
  
 OnApplicationClose
  {
-	"\0\s[0]%(reference0) has closed.\e"
+	"\0\s[0]%(cf)%(reference0) has closed.\e"
  }
 
  //---- OnApplicationFileOpen ----------------------------------------------------------
@@ -635,7 +635,7 @@ OnApplicationClose
  
 OnApplicationFileOpen
  {
-	"\0\s[0]Opening %(reference1).\e"
+	"\0\s[0]%(cf)Opening %(reference1).\e"
  }
 
 
@@ -646,7 +646,7 @@ OnApplicationFileOpen
  
 OnBatteryLow
  {
-	"\0\s[0]Your computer's battery is low. \w8There is %(reference0) power left.\e"
+	"\0\s[0]%(cf)Your computer's battery is low. \w8There is %(reference0) power left.\e"
 	//reference0 here is the amount of battery power. Replace as you like.
  }
  
@@ -655,7 +655,7 @@ OnBatteryLow
  
 OnBatteryCritical
 {
-	"\0\s[0]Your computer's battery is super low! Plug it in quick, or make sure you have everything saved!\e"
+	"\0\s[0]%(cf)Your computer's battery is super low! Plug it in quick, or make sure you have everything saved!\e"
 }
  
 //--OnBatteryNotify--------------------------------------------------------------------
@@ -684,14 +684,14 @@ OnShellScaling
 {
 	if reference0 >= 150 //this number is the percentage that you're scaling the ghost up to. In this case, it's 150%.
 	{
-		"\0\s[0]I'm a lot bigger now! Did you just want to see my pretty face better?\e"
+		"\0\s[0]%(cf)I'm a lot bigger now! Did you just want to see my pretty face better?\e"
 	}
 	elseif reference0 == 100 //this is 100%
 	{
-		"\0\s[0]I'm normal sized. The best size to be, usually.\e"
+		"\0\s[0]%(cf)I'm normal sized. The best size to be, usually.\e"
 	}
 	elseif reference0 == 50 //this is 50%. You can add any percentage that's listed under shell scaling if you want using more elseifs.
 	{
-		"\0\s[0]I'm 50% my original size.\w8 Was I in the way that much?\e"
+		"\0\s[0]%(cf)I'm half my original size.\w8 Was I in the way that much?\e"
 	}
 }

@@ -70,16 +70,16 @@ MouseMoveSakura
  			//they can actually be used.
 			if reference4 == "Head" 
  			{
-				"\0\s[2]That's kind of nice!\e"
-				"\0\s[0]Careful you don't get any ink on your hand.\e"
-				"\0\s[6]Is my face squishy or something?\e"
-				"\0\s[0]I \f[bold,true]told\f[bold,false] %(names) I don't bite.\e"
- 				"\0\s[6]This has certainly never happened to me before.\e"
- 				"\0\s[5]Pet? Pot? Pat? Pet?\e"
- 				"\0\s[0]Unless you have magic hands I don't know about, I don't think your pets will make me grow any hair.\e"
- 				"\0\s[2]I won't turn down pets from a friend!\e"
- 				"\0\s[0]I'd give you pets too, if I could.\e"
- 				"\0\s[11]I've been pet!\e"
+				"\0\s[2]%(cf)That's kind of nice!\e"
+				"\0\s[0]%(cf)Careful you don't get any ink on your hand.\e"
+				"\0\s[6]%(cf)Is my face squishy or something?\e"
+				"\0\s[0]%(cf)I \f[bold,true]told\f[bold,false] %(names) I don't bite.\e"
+ 				"\0\s[6]%(cf)This has certainly never happened to me before.\e"
+ 				"\0\s[5]%(cf)Pet? Pot? Pat? Pet?\e"
+ 				"\0\s[0]%(cf)Unless you have magic hands I don't know about, I don't think your pets will make me grow any hair.\e"
+ 				"\0\s[2]%(cf)I won't turn down pats from a friend!\e"
+ 				"\0\s[0]%(cf)I'd give you pets too, if I could.\e"
+ 				"\0\s[11]%(cf)I've been pet!\e"
  			}
 			
  		}

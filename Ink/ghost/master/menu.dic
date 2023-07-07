@@ -37,7 +37,6 @@ MenuRun
 	if lastTalk != "" //What this does is check to see if the ghost has already said a random bit of dialogue on its own, essentially by seeing if the lastTalk thing is NOT empty (!= means "does not equal").
 	{
 	  "%(df)\![*]\q[Repeat Last Dialogue,OnLastTalk]%(cf)\n"
-	  //If the ghost has said something, it will then display this menu option. You can replace "Repeat Last Dialogue" with whatever caption you like, such as "What were you saying?" or "What did you say?" or "Could you repeat that?" or something like that.
 	  
 	  //*********************Advanced User Info*******************************
 	  //These text boxes are meant for those who have an interest in expanding or using more complicated functions in their ghost. Also for my own reference in the future since I plan on using this template too, haha. If you have no interest in any of this and just want to keep things as simple as possible, feel free to skip these boxes.
@@ -48,14 +47,11 @@ MenuRun
 	--
  	"%(df)\![*]\q[What's on your mind?,OnAiTalk]\n\n[half]%(cf)"
 	"%(df)\![*]\q[Got anything to say?,OnAiTalk]\n\n[half]%(cf)"
-	
-	//This option will force the ghost to say something from aitalk if the user clicks it. Just replace "Say something" and "Say something 2" with whatever captions you think would be appropriate for such an option. IF you don't want two options for captions, delete one of the lines.
-	//Advanced users, you can add multiple captions for any option you add to a menu you make just like this, as long as you separate it from the other options into its own section with two dashes above and below.
 	--
 	"%(df)\![*]\q[I need some inspiration...,GiveInspiration]\n/
 	\![*]\q[Errands,dosomething]\n\n[half]/
 	\![*]\q[Help!,TalkHelp]\n/
-	\![*]\q[Check Status,configmenu]\n\n/
+	\![*]\q[Config,configmenu]\n\n/
  	\![*]\q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)%(cf)\e"
 }
 
@@ -139,10 +135,12 @@ TalkConfig
 	--
 	"\f[bold,1]Your birthday:\f[bold,0] %(birthdayprint) \f[sup,1](\q[Change it?,TEACHBDAY])\f[sup,0]\n\n"
 	--
+	"\f[bold,1]Talk Rate:\f[bold,0] - every %(talktime) \f[sup,1](\q[Change it,talkinter])\f[sup,0]\n"
+	--
+	"\f[bold,1]\q[Toggle NoteThis font,togglefont]\f[bold,0]\n\n"
+	--		
 	"\f[bold,1]Times petted:\f[bold,0] %(pets)\n\n"
 	--
-	"\f[bold,1]Talk Rate:\f[bold,0] - every %(talktime) \f[sup,1](\q[Change it,talkinter])\f[sup,0]\n\n"
-	--		
 	"\![*]\q[Back to the menu,BACKTOMENU]\e"
 }
 
@@ -166,7 +164,7 @@ Select.deleteoff
 
 Select.TEACHBDAY
 	{	
-		"\0\s[0]What month were you born? \w8You can tell me the name or number.\![open,inputbox,OnUserBornMonth,-1]\e"
+		"\0\s[0]%(cf)What month were you born in? \w8You can tell me the name or number.\![open,inputbox,OnUserBornMonth,-1]\e"
 		
 		//You can replace the dialogue up to the \![open,inputbox,OnUserBornMonth,-1] tag, leave that alone. You'll need the input box to get the information.
 		
@@ -200,7 +198,7 @@ OnUserBornMonth
 	
 	else //if the month isn't a valid month, like 32 or something.
 	{
-			"\0\s[0]%(cf)That's not a real month, silly. Try again."
+			"\0\s[2]%(cf)That's not a real month, silly. \s[0]Try again."
 			--
 			"\![open,inputbox,OnUserBornMonth,-1]\![set,balloontimeout,-1]\e"
 			
@@ -255,7 +253,7 @@ OnUserBornDay
 	}
 	else //If the day isn't valid, like the 10046th or something, this will open the input box again and have a \e so the dialogue below doesn't play. You can replace the dialogue in the first line here.
 	{
-		"\0\s[0]%(cf)That's not a real day. \s[5]At least I'm pretty sure its not. \s[0]Try again, you got this!."
+		"\0\s[0]%(cf)That's not a real day. \s[5]At least I'm pretty sure its not. \s[0]Try again, \s[2]you got this!."
 		--
 		"\![open,inputbox,OnUserBornDay,-1]\e"
 	}	
@@ -401,7 +399,7 @@ Select.updatecheck
 //When the user clicks Open Calender. This will open the calender function of SSP, an in-built feature that you don't have to worry about in the least.
 Select.CALENDAR
 {
-	"\0\s[0]Sure, I'll grab a calendar for you.\w8\![open,calendar]\e"
+	"\0\s[0]%(cf)Sure, I'll grab a calendar for you.\w8\![open,calendar]\e"
 	
 	//You can replace the dialogue here up to the \!.
 	//Advanced users, can you break it down yet? It's basically just using \! to open calender.exe or dll or whatever SSP uses to make it happen.
@@ -410,7 +408,7 @@ Select.CALENDAR
 //When the user chooses SSP preferences. This will open the same window that shows up if you right click your ghost and go to Utilities - Preferences.
 Select.sspconfig
 {
-	"\0\s[0]I'll pull that up for you.\w8\![open,configurationdialog] \s[11]What are you going to change?\e"
+	"\0\s[0]%(cf)I'll pull that up for you.\w8\![open,configurationdialog] \s[11]What are you going to change?\e"
 	
 	//Again, you can replace up to the \! tag.
 }
@@ -422,15 +420,15 @@ Select.ChoiceGarbagecan
 	
 	if _gomicheck == 0 //If the recycle bin is empty.
 	{
-		"\0\s[0]Sure!\w8\0\s[-1]\w8\w8\w8\w8\w8\0\s[0]\cIt's already empty, silly!\e"
+		"\0\s[0]%(cf)Sure!\w8\0\s[-1]\w8\w8\w8\w8\w8\0\s[0]\cIt's already empty, silly!\e"
 		
 		//This isn't the usual flat template dialogue, mostly because I wanted to show that this is a good place to use s[-1], which I covered in the walkthrough file. You can have your ghost disappear momentarily like they're going to check your recycle bin, then come back. \c clears the ghost's balloon of text. Replace dialogue as you desire.
 	}
 	elseif _gomicheck >= 1 //If the recycle bin is full.
 	{
-		"\0\s[0]Yeah, I can do that!\w8\w8\s[-1]\w8\w8\w8\w8\w8\![raise,OnGarbagecanEmpty]\w9\w9\w9\s[0]\cAll done!\e"
+		"\0\s[0]%(cf)Yeah, I can do that!\w8\w8\s[-1]\w8\w8\w8\w8\w8\![raise,OnGarbagecanEmpty]\w9\w9\w9\s[0]\cAll done!\e"
 		
-		"\0\s[0]Sure thing! Be right back!\w8\w8\s[-1]\w8\w8\w8\w8\w8\![raise,OnGarbagecanEmpty]\w9\w9\w9\0\s[0]\cRecycle bin empty!\e"
+		"\0\s[0]%(cf)Sure thing! Be right back!\w8\w8\s[-1]\w8\w8\w8\w8\w8\![raise,OnGarbagecanEmpty]\w9\w9\w9\0\s[0]\cRecycle bin empty!\e"
 		
 		//Somewhat similar to the above, but notice the \![raise],OnGarbagecanEmpty] tag in there. That's what actually empties the recycle bin, so make sure you don't delete that tag. Otherwise, replace the dialogue as you want.
 		//As you can see, you can have multiple pieces of dialogue in here, just like you can for many other functions scattered through the .dic files. If you only want the one, just delete the others, or if you want to add more, just copy and paste and write new dialogue as it comes to you. This applies to when the recycle bin is empty as well.
@@ -474,9 +472,9 @@ Select.MailCheck
 
 OnChoiceTimeout
  {
-	"\0\s[0]Why'd you open the menu if you're not going to use it?\e"
-	"\0\s[0]I'm just going to close the menu if you're not going to use it.\e"
-	"\0\s[0]Guess I'll get the menu out of the way since you're not using it.\e"
+	"\0\s[0]%(cf)Why'd you open the menu if you're not going to use it?\e"
+	"\0\s[0]%(cf)I'm just going to close the menu if you're not going to use it.\e"
+	"\0\s[8]%(cf)Guess I'll get the menu out of the way since you're not using it.\e"
  }
 
 //---- TalkHelp ----------------------------------------------------------------
@@ -488,6 +486,7 @@ Select.TalkHelp
 	--
  	"%(df)\![*]\q[Where did you come from again?,ComeFrom]\n/
 	\![*]\q[Why are you a ghost?,WhyGhost]\n/
+	\![*]\q[What was that about the Note This font?,HowFont]\n\n/
 	\![*]\q[Any buttons I can press?,buttons]\n/
 	\![*]\q[Just messing with you lol,HelpJoke]\n\n/
  	\![*]\q[Back to the menu,BACKTOMENU]%(cf)\e"
@@ -495,17 +494,35 @@ Select.TalkHelp
 
 Select.ComeFrom
 {
-	"\0\s[0]%(cf)Well if you're asking about me, Ink, it's a bit of a long story, but if you mean me the ghost you probably just got me in an email or a zip file or something. I'm not available online anywhere.\e"
+	"\0\s[0]%(cf)Well if you're asking about me, Ink, it's a bit of a long story, but if you mean me, the ghost, \s[2]you probably got me from GitHub!\w2\s[0] I can give you a link if you need it, even though I'm already right here.\n\n[half]%(df)\![*]\q[Yes please!,GetLink]\n\![*]\q[No thanks,NoLink]\n"
+}
+
+Select.GetLink
+{
+	"%(cf)Here you go!\n\n\_a[https://github.com/MooncakeT/GhostHub/tree/master/nars]GitHub Page\_a"
+}
+
+Select.NoLink
+{
+	"%(cf)Alrighty."
+	"%(cf)Okie dokie."
+	"%(cf)Okay."
+	"%(cf)Alright."
 }
 
 Select.WhyGhost
 {
-	"\0\s[0]%(cf)I was made for someone's birthday! I'm one of that person's favorite characters, so I was one of the first choices for being made into a ghost! Lucky me I was chosen! The person who made me isn't too familiar with me though, so I might be a bit out of character.\e"
+	"\0\s[2]%(cf)I was made for someone's birthday!\w5 \s[0]I'm one of that person's favorite characters, so I was one of the first choices for being made into a ghost! \s[2]Lucky me I was chosen!\w8\s[0]\n\n[half]The person who made me isn't too familiar with me though, \s[6]so I might be a bit out of character.\e"
 }
 
 Select.HelpJoke
 {
 	"\0\s[8]%(cf)Not cool.\e"
+}
+
+Select.HowFont
+{
+	"\0\s[2]%(cf)I can talk in the Note This font! \s[0]As long as it's installed I should be able to use it! Make sure it's toggled on in the Config menu, and that it is actually installed on your machine.\e"
 }
 
 
@@ -520,49 +537,54 @@ Select.buttons
  	\![*]\q[Back to the menu,BACKTOMENU]%(cf)\e"
 }
 
-
+//---- Toggle Font -------------------------------------------------------------
+Select.togglefont
+{
+	useFont = !useFont
+	"%(cf)Got it!"
+}
 
 //---- GiveInspiration ---------------------------------------------------------
 
  Select.GiveInspiration
  {
- 	"\0\s[5]How about your favorite animal?\e"
- 	"\0\s[1]I'd like to see what I look like in your style!\w8\s[3]\e"
- 	"\0\s[0]Maybe take inpiration from a friend?\n\s[2]What's something that reminds you of them?\e"
- 	"\0\s[0]How about a challenge? Draw whatever is to your right at this very moment!\e"
- 	"\0\s[1]A big blob!\w8\w8\w8\w8\s[0]\e"
- 	"\0\s[0]Who's your favorite character? Why don't you draw them?\e"
- 	"\0\s[1]Oh! I've got a good one! Draw the thing you're drawing with!\w8\s[0]\e"
- 	"\0\s[5]Hmm... How about the last thing you ate?\e"
- 	"\0\s[2]Easy! Something that makes you happy!\e"
- 	"\0\s[0]How about something you don't like? That would be interesting don'cha think?\e"
- 	"\0\s[0]Someone from your favorite AU!\e"
- 	"\0\s[0]How about you try drawing something in monochrome? \s[5]Maybe with %(colors)?\e"
- 	"\0\s[0]Somewhere you'd really like to go! Anywhere in the multiverse!\e"
- 	"\0\s[0]Something that reminds you of home.\e"
- 	"\0\s[0]How about you draw %(morenames)?\e"
- 	"\0\s[0]The last thing you threw away!\e"
- 	"\0\s[0]The most boring thing you can thing of!\e"
- 	"\0\s[0]Somewhere you spend a lot of time!\e"
- 	"\0\s[2]Something that's not real!\w8\w4\s[0] In your universe, anyway.\e"
- 	"\0\s[1]Something cool you've seen recently!\e"
- 	"\0\s[7]Something yucky?\e"
- 	"\0\s[0]Try drawing something from a picture you have!\e"
- 	"\0\s[0]What about remaking something you've done in the past?\w5\s[2] That's always a great way to see how much you've grown!\e"
- 	"\0\s[8]The last thing that made you angry.\w8 Maybe ripping it up when your done would make you feel better?\e"
- 	"\0\s[1]You should do a self-portrait!\w3\s[3]\e"
- 	"\0\s[2]Try making an object into something else!\e"
- 	"\0\s[0]Do you have any pets, or know someone who does? \s[2]How about you draw one of them?\e"
- 	"\0\s[5]How about something from history?\e"
- 	"\0\s[1]How about making a crossover of your own!\w8\s[3]\e"
- 	"\0\s[2]Something you wish you could see everyday!\e"
- 	"\0\s[0]Something you've seen on a trip!\e"
- 	"\0\s[0]One of your favorite things you own!\e"
- 	"\0\s[5]How about something you use a lot, but don't think about much? \s[2] Let's give it some recognition!\e"
- 	"\0\s[0]Try drawing something out of only %(shapes)!\e"
- 	"\0\s[1]How about %(names) as a %(shapes)?\w5 \s[2]That'd be pretty funny!\e"
- 	"\0\s[0]Try drawing a dodecahedron!\e"
- 	"\0\s[0]Try drawing something in a different style than you usually do, or a style you want to try out!\e"
+ 	"\0\s[5]%(cf)How about your favorite animal?\e"
+ 	"\0\s[1]%(cf)I'd like to see what I look like in your style!\w8\s[3]\e"
+ 	"\0\s[0]%(cf)Maybe take inpiration from a friend?\n\s[2]What's something that reminds you of them?\e"
+ 	"\0\s[0]%(cf)How about a challenge? Draw whatever is to your right at this very moment!\e"
+ 	"\0\s[1]%(cf)A big blob!\w8\w8\w8\w8\s[0]\e"
+ 	"\0\s[0]%(cf)Who's your favorite character? Why don't you draw them?\e"
+ 	"\0\s[1]%(cf)Oh! I've got a good one! Draw the thing you're drawing with!\w8\s[0]\e"
+ 	"\0\s[5]%(cf)Hmm... How about the last thing you ate?\e"
+ 	"\0\s[2]%(cf)Easy! Something that makes you happy!\e"
+ 	"\0\s[0]%(cf)How about something you don't like? That would be interesting don'cha think?\e"
+ 	"\0\s[0]%(cf)Someone from your favorite AU!\e"
+ 	"\0\s[0]%(cf)How about you try drawing something in monochrome? \s[5]Maybe with %(colors)?\e"
+ 	"\0\s[0]%(cf)Somewhere you'd really like to go! Anywhere in the multiverse!\e"
+ 	"\0\s[0]%(cf)Something that reminds you of home.\e"
+ 	"\0\s[0]%(cf)How about you draw %(morenames)?\e"
+ 	"\0\s[0]%(cf)The last thing you threw away!\e"
+ 	"\0\s[0]%(cf)The most boring thing you can thing of!\e"
+ 	"\0\s[0]%(cf)Somewhere you spend a lot of time!\e"
+ 	"\0\s[2]%(cf)Something that's not real!\w8\w4\s[0] In your universe, anyway.\e"
+ 	"\0\s[1]%(cf)Something cool you've seen recently!\e"
+ 	"\0\s[7]%(cf)Something yucky?\e"
+ 	"\0\s[0]%(cf)Try drawing something from a picture you have!\e"
+ 	"\0\s[0]%(cf)What about remaking something you've done in the past?\w5\s[2] That's always a great way to see how much you've grown!\e"
+ 	"\0\s[8]%(cf)The last thing that made you angry.\w8 Maybe ripping it up when your done would make you feel better?\e"
+ 	"\0\s[1]%(cf)You should do a self-portrait!\w3\s[3]\e"
+ 	"\0\s[2]%(cf)Try making an object into something else!\e"
+ 	"\0\s[0]%(cf)Do you have any pets, or know someone who does? \s[2]How about you draw one of them?\e"
+ 	"\0\s[5]%(cf)How about something from history?\e"
+ 	"\0\s[1]%(cf)How about making a crossover of your own!\w8\s[3]\e"
+ 	"\0\s[2]%(cf)Something you wish you could see everyday!\e"
+ 	"\0\s[0]%(cf)Something you've seen on a trip!\e"
+ 	"\0\s[0]%(cf)One of your favorite things you own!\e"
+ 	"\0\s[5]%(cf)How about something you use a lot, but don't think about much? \s[2] Let's give it some recognition!\e"
+ 	"\0\s[0]%(cf)Try drawing something out of only %(shapes)!\e"
+ 	"\0\s[1]%(cf)How about %(names) as a %(shapes)?\w5 \s[2]That'd be pretty funny!\e"
+ 	"\0\s[0]%(cf)Try drawing a dodecahedron!\e"
+ 	"\0\s[0]%(cf)Try drawing something in a different style than you usually do, or a style you want to try out!\e"
  }
 
 

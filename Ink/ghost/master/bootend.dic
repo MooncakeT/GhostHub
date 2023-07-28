@@ -50,6 +50,7 @@ OnFirstBoot
 {
 //OnFirstBoot begins with some code at first to define some values your ghost will be using. I'll briefly touch on what they are, but for the most part you should not need to edit any of these and you can safely ignore most of them (except nowshell if you've changed your shell folder's name from master). Definitely don't delete them unless you know what you're doing.
 
+	//Default vars
  	lastTalk = "" //This is part of how chained conversations work (see aitalk.dic).
 	passhour = 0
 	passmin = 0 
@@ -64,9 +65,23 @@ OnFirstBoot
 	deleteshitai = "OFF" //Sets whether or not the user can uninstall the ghost to "OFF". The user can change it later in the config menu (see menu.dic). 
 	nowshell = "master" //This is for a special if check in aitalk.dic to see what shell the ghost is using. You should use the name of your default shell folder here.
 	firstboot = 1 //This marks that this is the first time you've run the ghost. It's so it won't reroute to general name changing dialogue when the user inputs their name.
+	
+	//Other vars
 	pets = 0 //Count the pets
-	lastSeen = 0 //Track what day Ink was last seen
-	useFont = 0 //Whether or not to use the NoteThis font
+	lastSeen = 0 // Track what day Ink was last seen
+	useFont = 1 // Whether or not to use the NoteThis font
+
+	//Game vars
+	aichoice = 0 // To track Ink's choice in games
+	pchoice = 0 // To track player choice in games
+	RPSpWins = 0 // To track RPS player wins
+	RPSaiWins = 0 // To track RPS ai wins
+	RPSplays = 0 // To track times played RPS
+	NumGuessWins = 0 // To track times won number guess
+	NumGuessPlays = 0 // To track times played number guess
+	TTTplays = 0 // To track times played TTT
+	TTTpWins = 0 // To track TTT player wins
+	TTTaiWins = 0 // To track TTT ai wins
 
 	if reference0 == 0 //Don't touch this line.
  	{
@@ -202,7 +217,7 @@ OnBoot
 	passhour = 0
 	passmin = 0
 	passsec = 0
-	
+
  	"%(bootani)" //This sets them up in their neutral pose for now.
 	
 	//If you don't want to deal with individual day messages when you boot them, you can delete everything down to the end bracket for
@@ -227,6 +242,7 @@ OnBoot
 
 	if dayslot == userbirthday
 	{
+		nowshell = "partyhat"
 		if userbirthday == "4month 15day" {
 			"\0\s[0]%(cf)It's April 15th! That's our birthday! Happy birthday to us!"
 		}else{
@@ -238,7 +254,8 @@ OnBoot
 	}
 	elseif dayslot == "4month 15day" //Like above, this if statement is checking the date
 	{
-				"\0\s[0]%(cf)Today is April 15th.\w8\w8\s[2] Hey that's my birthday! Happy birthday to me!\e"
+		nowshell = "partyhat"
+		"\0\s[0]%(cf)Today is April 15th.\w8\w8\s[2] Hey that's my birthday! Happy birthday to me!\e"
 	}				
 	else
 	{
@@ -264,13 +281,14 @@ OnBoot
 normalboottalk
 {
 	if lastSeen == dayslot //Check if lastSeen is current day
-		{
-			"\0\s[0]%(cf)Wanted to see me again so soon?\e"
+	{
+		"\0\s[0]%(cf)Wanted to see me again so soon?\e"
 
-			"\0\s[0]%(cf)What, did you not get enough of my pretty face earlier?\w5 That's okay, \s[2]I'll always take the chance to look at your pretty face some more too!\e"
+		"\0\s[0]%(cf)What, did you not get enough of my pretty face earlier?\w5 That's okay, \s[2]I'll always take the chance to look at your pretty face some more too!\e"
 
-			"\0\s[0]%(cf)Miss me already? It hasn't been \f[italic,1]that\f[italic,0] long %(username)!\e"
-	}elseif RAND(100) < 40 {
+		"\0\s[0]%(cf)Miss me already? It hasn't been \f[italic,1]that\f[italic,0] long %(username)!\e"
+		
+	}elseif RAND(100) < 50 {
 			"\0\s[0]%(cf)Hello! Good to see you again!\e"
 	
 			"\0\s[0]%(cf)Hey there! How's it going?\e"
@@ -381,7 +399,7 @@ OnClose
  						}
  						else
  						{
- 							"\0\s[0]%(cf)Yeah, I'm going to bed. \s[2]Don't want to be tired tomorrow.\w8"
+ 							"\0\s[0]%(cf)Maybe I can manage one last check on an AU?\w8"
 							
  							"\0\s[0]%(cf)I'm off to make one last check on the AUs!\w8"
  						}
@@ -395,8 +413,8 @@ OnClose
  						}
 						
  						"\0\s[0]%(cf)Good night!\w8"
-						
-						"\0\s[0]%(cf)Maybe I can manage one last check on an AU?\w8"
+
+ 						"\0\s[0]%(cf)Yeah, I'm going to bed. \s[2]Don't want to be tired tomorrow.\w8"
  				}
 			else //like above, this is the midnight time slot since it's the last one left.
  				{
@@ -507,16 +525,15 @@ OnGhostChanged
 
 OnShellChanging
  {
-	if reference0 == "Hypothetical Shell that doesn't actually exist" //reference0 in OnShellChanging is the name of the shell you're swapping to. It should be defined in the descript.txt file in your shell folder. If you do have alternate shells, put in the right name here.
+	if reference0 == "Party Hat" //reference0 in OnShellChanging is the name of the shell you're swapping to. It should be defined in the descript.txt file in your shell folder. If you do have alternate shells, put in the right name here.
 	{
-	"\0\s[0]%(cf)This dialogue is specifically for changing to this particular shell.\w8 It totally exists.\w8\e"
-	//Then rewrite this line as appropriate.
+		"\0\s[11]%(cf)You want me to get my party hat? \w2\s[0]Okay, I'll get it.\w8\e"
 	}
 	else //if you don't have any specific dialogue for a specific shell
 	{
-	"\0\s[0]%(cf)This dialogue is for changing shells.\w8\e"
+		"\0\s[0]%(cf)Some new clothes? Cool, I'll put them on!\w8\e"
 	
-	"\0\s[0]%(cf)This is another bit of dialogue for changing shells.\e"
+		"\0\s[0]%(cf)Alight, I'll put that on!\w8\e"
 	
 	//Rewrite these two lines as you need.
 	}
@@ -529,23 +546,36 @@ OnShellChanging
  
 OnShellChanged
  {
- 	if reference0 == "GT Default Shell" //Again, this is the name of your shell as you put in the descript.txt file for that shell.
+ 	if reference0 == "Default" //Again, this is the name of your shell as you put in the descript.txt file for that shell.
  	{
  		nowshell = "master" //This is the folder name for your shell. Not the same as the above! 
 		
- 		"\0\s[0]%(cf)Back to my normal clothes!\e"
+ 		"\0\s[0]%(cf)Back to my normal outfit!\e"
  	}
- 	elseif reference0 == "Underverse Shell" //You can use as many elseifs for as many shells as you've got.
+ 	elseif reference0 == "Party Hat" //You can use as many elseifs for as many shells as you've got.
  	{
- 		nowshell = "underverse"
-		
- 		"\0\s[0]%(cf)I remember this outfit!\e"
- 	}
+ 		nowshell = "partyhat"
+
+ 		if dayslot == userbirthday
+		{
+			if userbirthday == "4month 15day" {
+				"\0\s[2]%(cf)Happy birthday to us! I'm ready to celebrate!\e"
+			}else{
+				"\0\s[2]%(cf)Ready to celebrate your birthday!\e" 
+			}
+		}
+		elseif dayslot == "4month 15day" //Like above, this if statement is checking the date
+		{
+			"\0\s[2]%(cf)Got my party hat to make the celebrating official!\e"
+		}	
+ 		
+ 		"\0\s[0]%(cf)Alright, \s[2]got my party hat! \w4\s[11]Are we celebrating something?\e"
+ 	}	
  	else //For any shell without a specific name, or if you don't want to bother with individual responses to a shell.
  	{
-	"\0\s[0]%(cf)I look different now, right?\e"
+		"\0\s[0]%(cf)I look different now, right?\e"
 	
-	//Note the %(reference[0]) here! This time that should store the name of whatever shell you're switching to. Replace this bit of dialogue as you need.
+		//Note the %(reference[0]) here! This time that should store the name of whatever shell you're switching to. Replace this bit of dialogue as you need.
 	}
  }
 
@@ -556,7 +586,7 @@ OnShellChanged
 
 OnDressupChanged
 {
-if reference0 == 0 //in OnDressupChanged, reference0 refers to the character, therefore this is evaluating which character in question is getting dressed up. 0 is the main character, as you know from the walkthrough by now.
+/*if reference0 == 0 //in OnDressupChanged, reference0 refers to the character, therefore this is evaluating which character in question is getting dressed up. 0 is the main character, as you know from the walkthrough by now.
 	{
 	if reference1 == "Clothing for Girl" //This is the name of the clothing item in the descript.txt file, I'm pretty sure.
 		{
@@ -594,5 +624,5 @@ else //if reference0 isn't the main character, then it has to be the side charac
 			"\0\s[0]%(cf)You took off the hat.\e"
 			}
 		}
-	}
+	}*/
 }

@@ -24,7 +24,7 @@ kero.name,Triangle
 
 craftman,Mooncake
 craftmanw,Mooncake
-craftmanurl,http://www.ashido.com/ukagaka/walkthrough.html
+craftmanurl,https://github.com/MooncakeT/GhostHub
 
 
 //This is coding stuff, don't touch it.

@@ -1,4 +1,4 @@
-﻿//---------------------------AI Talk--------------------------
+//---------------------------AI Talk--------------------------
 
 //--OnAiTalk
 //Leave this alone.
@@ -50,17 +50,17 @@ OnAiTalk
 RandomTalk : nonoverlap_pool
 {
 	
-	"\0\s[0]%(cf)I really like the doodle-sphere, but it can get a bit lonely sometimes.\e"
+	"\0\s[0]%(cf)I really like the doodle-sphere, \s[12]but it can get a bit lonely sometimes.\e"
 	
 	"\0\s[9]%(cf)Got to remember to fill up my color vials next time I'm in the doodle-sphere.\e"
 	
 	"\0\s[0]%(cf)One upside of not having a soul is that monster magic doesn't really work on me.\e"
 	
 	"\0\s[0]%(cf)Classic Sans introduced me to quiches.\w8\s[5] Well, he explained what they were. \n\s[8]He forgot the one he was going to bring me under a bench somewhere.\e"
-	
+
 	"\0\s[5]%(cf)Sometimes I wonder if there's more to the doodle-sphere than I've seen. \nLike, could I access more than just AUs from there?\e"
 	
-	"\0\s[5]%(cf)I wonder if Error would let me catch up on Undernovela with him?\n\s[12]If I can ask before he kicks me out, anyway.\e"
+	"\0\s[5]%(cf)I wonder if Error would let me catch up on Undernovela with him?\n\w8\s[12]If I can ask before he kicks me out, anyway.\e"
 	
 	"\0\s[5]%(cf)I don't remember the last time I saw %(names). Wonder what he's up to?\e"
 	
@@ -72,13 +72,15 @@ RandomTalk : nonoverlap_pool
 	
 	"\0\s[0]%(cf)I've tried making myself food with my brush.\s[12] It doesn't usually work out very well.\e"
 	
-	"\0\s[0]%(cf)I experiment with what I can make with my brush sometimes. \s[8]Results have... varied.\e"
+	"\0\s[0]%(cf)I experiment with what I can make with my brush sometimes. \s[8]Results have.\w2.\w2.\w5 varied.\e"
 	
 	"\0\s[0]%(cf)Sometimes I wish I could use makeup like Undyne and Mettaton.\w6\n\s[12]Unfortunately, I don't have eyelids.\w6 Or lips.\w6 Or skin.\e"
 	
 	"\0\s[0]%(cf)%(names) tried cleaning the ink off my face once. \s[12]It didn't work.\e"
 	
 	"\0\s[0]%(cf)I'd get you a new sketchbook, but I don't think I would actually be able to give it to you.\e"
+
+	"\0\s[0]%(cf)I'd get you some new canvases, but I don't think I would actually be able to give them to you.\e"
 	
 	"\0\s[0]%(cf)I'd get you some %(mediums)s, but I don't think I would be able to give them to you.\e"
 	
@@ -124,11 +126,15 @@ RandomTalk : nonoverlap_pool
 
 	"\0\s[9]%(cf)Need to finish that...\e"
 
-	"\0\s[5]%(cf)...\e"
+	"\0\s[5]%(cf).\w3.\w3.\w8\w4\nWho wanted that thing?\e"
 
 	"\0\s[5]%(cf)I should find that book %(names) told me about...\e"
 
+	"\0\s[0]%(cf)Have you made anything lately? \w4\s[2]I'd love to see it if you have!\e"
 
+	"\0\s[0]%(cf)\e"
+
+// Chunks of dialogue
 	{
 		"\0\s[0]%(cf)I've been thinking about trying out a new hobby.\w8\n\s[5]"
 	--
@@ -169,13 +175,35 @@ RandomTalk : nonoverlap_pool
 	--
 		"\0\s[12]%(cf)He just ignored me..."
 
-		"\0\s[0]%(cf)He didn't have any particular opinions."
+		"\0\s[0]%(cf)He didn't have any particular opinions. \w3\s[2]I still love them, though."
 
 		"\0\s[2]%(cf)He said it was his favorite shape!"
 	--
 		"\e"
 	}
 	
+	{
+		if RPSaiWins == RPSpWins{
+			"\0\s[5]%(cf)We're tied in wins for Rock Paper Scissors right now. \s[0]How we play a game and break that tie?\n\n%(df)\![*]\q[You're on!,choiceRPS]     \![*]\q[Not right now...,gameDeny]\e"
+		}elseif RPSaiWins > RPSpWins{
+			"\0\s[0]%(cf)I've beaten you at Rock Paper Scissors\s[2] %(RPSaiWins) times!\w8 Pretty good if I say so myself.\e"
+		}else{
+			"\0\s[0]%(cf)You've won Rock Paper Scissors %(RPSpWins) times. \w8\s[2]You're super good at it!\e"
+		}
+		
+	}
+
+	{
+		if TTTaiWins == TTTpWins{
+			"\0\s[5]%(cf)We're tied in wins for Tic-Tac-Toe right now. \s[0]How we play a game and break that tie?\n\n%(df)\![*]\q[You're on!,choiceTTT]     \![*]\q[Not right now...,gameDeny]\e"
+		}elseif TTTaiWins > TTTpWins{
+			"\0\s[0]%(cf)I've beaten you at Tic-Tac-Toe\s[2] %(TTTaiWins) times!\w8 Pretty good if I say so myself.\e"
+		}else{
+			"\0\s[0]%(cf)You've won Tic-Tac-Toe %(TTTpWins) times. \w8\s[2]You're super good at it!\e"
+		}
+		
+	}
+
 	
 	//Chains
 	
@@ -184,35 +212,54 @@ RandomTalk : nonoverlap_pool
 	"\0\s[0]%(cf)I've tried to prank some of the others who can travel between AUs before.\e:chain=anotherchain"
 	
 
-	//Questions
+	//Answerables
 
 	"\0\s[5]%(cf)Hey, %(username), I have a question for you.\w8\n\n[half]%(df)\![*]\q[Go ahead!,question1]\e" 
+
+	"\0\s[5]%(cf).\w3.\w3.\w8\n\n[half]\s[0]I challenge you to a round of Rock Paper Scissors!\n\n%(df)\![*]\q[You're on!,choiceRPS]     \![*]\q[Not right now...,gameDeny]\e"
+
+	"\0\s[5]%(cf).\w3.\w3.\w8\n\n[half]\s[0]I challenge you to a game of Tic-Tac-Toe!\n\n%(df)\![*]\q[You're on!,choiceTTT]     \![*]\q[Not right now...,gameDeny]\e"
+
+	{
+		"\0\s[0]%(cf)Wanna play a game?\n\n"
+		--
+		"%(df)\![*]\q[You're on!,choiceRPS]"
+		"%(df)\![*]\q[You're on!,choiceNumGuess]"
+		"%(df)\![*]\q[You're on!,choiceTTT]"
+		--
+		"\![*]\q[Not right now...,gameDeny]"
+		--
+		"\e"
+	}
 	
 	//--If statements
 	//You can put if statements in RandomTalk! They don't even need Else statements, unless you want to keep two sets of statements completely separate - for example, you have one pool of conversations for when there are two characters, and one for if there are three characters. You wouldn't want these to overlap, so you'd put one pool in the if statement and the other in the else. Most of the time though, you won't need an Else statement for these, since they'll mostly only be adding in dialogue if the if statement is true. 
 	
-	/*if nowshell == "master" //This checks to see what shell they're currently using. You may remember this value being defined back in bootend.dic. If they're in their default shell...
+	if nowshell == "master" //This checks to see what shell they're currently using. You may remember this value being defined back in bootend.dic. If they're in their default shell...
 	{
 	//Then these conversations are available! Note the brackets enclosing this set of dialogue.
-	"\0\s[0]%(cf)Here is dialogue related to the default shell.\w8 You can use this to comment on clothing your ghost is wearing.\e"
+	//"\0\s[0]%(cf)Here is dialogue related to the default shell.\w8 You can use this to comment on clothing your ghost is wearing.\e"
 	
-	"\0\s[0]%(cf)Here is more dialogue related to the default shell.\e"
+	//"\0\s[0]%(cf)Here is more dialogue related to the default shell.\e"
 	}
 	
 	//You can also put in multiple ifs checking for the same thing to vary the responses. In this case, it's checking to see if they're wearing another shell. You don't need to use elseifs for this! Just an if is fine.
-	if nowshell == "Hypothetical Shell that doesn't actually exist"
+	if nowshell == "partyhat"
 	{
-	"\0\s[0]%(cf)This is dialogue related to a shell I don't actually have.\w8 \s[8]Unless it somehow pops into existence.\e"
+		"\0\s[2]%(cf)I like wearing my party hat!\e"
 	
-	"\0\s[0]%(cf)This is more dialogue related to a hypothetical shell I don't actually have.\e"
-	}*/
+		"\0\s[0]%(cf)Party hat, party hat!\e"
+	}
 	
 	//So you can use these to check for any number of situations. I think this feature is really neat, so I'm going to set up some quick default responses for the months, days, and time of day. If you don't want to do these, you can just delete this whole set of ifs down to the //--Double Envelopes section below.
 	//You can also nest ifs within these, so you could check if it was the 25 of April in the morning for example. You can also add or take away dialogue from these as you like, so if you want to have five dialogue options for April or one for January, you can totally do that.
-	/*if (month == %(bornmonth)) && (dayslot < %(bornday))
-	{
-		"\0\s[2]%(cf)Are you excited for you birthday?"
-	}*/
+	if (month == bornmonth) && (dayslot < bornday){
+		"\0\s[2]%(cf)Are you excited for you birthday %(username)?\e"
+	}
+
+	if dayslot == userbirthday{
+		"\0\s[0]%(cf)I know I said it already, \s[2]but Happy Birthday %(username)!\e"
+	}
 
 	if month == 1 //January
 	{
@@ -296,11 +343,11 @@ RandomTalk : nonoverlap_pool
 	}
 	if month == 11 //November
 	{
-		"\0\s[0]%(cf)Coming up on the end of the year.\e"
+		"\0\s[0]%(cf)It's getting close to the end of the year.\e"
 		
 		"\0\s[0]%(cf)It hasn't snowed yet in the doodle-sphere.\w8 Well, it doesn't snow there unless I make it snow, so I guess that makes sense.\e"
 
-		"\0\s[0]%(cf)I hope you get some time to rest.\w8\s[12] This time of year always seems to keep people busy.\e"
+		"\0\s[0]%(cf)I hope you get some time to relax.\w8\s[12] This time of year always seems to keep people busy.\e"
 	}
 	if month == 12 //December
 	{
@@ -334,7 +381,7 @@ RandomTalk : nonoverlap_pool
 	}
 	if weekday == 5 //Friday
 	{
-		"\0\s[0]%(cf)Any big plans for the weekend? \w5I don't have any.\n\n[half]\w8\w6I'm pretty sure.\e"
+		"\0\s[0]%(cf)Any big plans for the weekend? \w5I don't have any.\n\n[half]\w8\w6\s[5]I'm pretty sure.\e"
 	}
 	if weekday == 6 //Saturday
 	{
@@ -384,8 +431,6 @@ RandomTalk : nonoverlap_pool
 		"\0\s[11]%(cf)Do you get a lot of inspiration at night? \w6\s[0]I do sometimes, but \s[12]I usually just have to jot the idea down to use later.\e"
 	}
 	
-	
-	
 	//Fun with text
 	//"\0\s[0]%(cf)\f[height,20]These words are really large.\f[height,default]\w8 These words are a normal size. \w8\f[height,6]These words are small.\f[height,default]\e"
 	
@@ -418,21 +463,16 @@ anotherchain
 }}CHAIN
 
 
+// Answers
 Select.question1
 {
 
-		"\0\s[0]%(cf)Would you mind if I took inspiration from you for something to draw?"
-		--
-		"\n\n[half]"
+		"\0\s[0]%(cf)Would you mind if I took inspiration from you for something to draw?\n\n[half]"
 		--
 		{
 			"%(df)\![*]\q[Not at all!,notatall]\n/
-			\![*]\q[Actually I would.,actuallywould]"
+			\![*]\q[Actually I would.,actuallywould]\e"
 		}
-		--
-
-		"\e"
-
 }
 
 Select.notatall
@@ -446,6 +486,16 @@ Select.actuallywould
 {
 	"\0\s[0]%(cf)Well, can't blame me for asking.\e"
 	"\0\s[0]%(cf)Ah, well. \s[2]Guess I'll have to look elsewhere!\e"
+}
+
+Select.gameDeny
+{
+	"\0\s[12]%(cf)Aw, alright.\e"
+	"\0\s[0]%(cf)Maybe later then?\e"
+	"\0\s[12]%(cf)Okay...\e"
+	"\0\s[0]%(cf)Okie dokie.\e"
+	"\0\s[0]%(cf)Okay then.\e"
+	"\0\s[0]%(cf)Alright.\e"
 }
 
 //-OnMinuteChange
@@ -484,7 +534,6 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
  		if hour == 12 //And the hour equals 12, meaning it's noon. You can change this to some other hour if you want.
 		{
  			"\0\s[0]%(cf)It's noon.\w8\w8\n\s[5]12PM is noon, not midnight, right?\e"
-			//Replace with appropriate dialogue as you want.
 		}
  		elseif hour == 0 //If the hour is zero, aka midnight. Again, you can change this to whatever hour you want to check for. This section is flexible! You can also add more elseifs if you want to check for other hours.
 		{
@@ -494,7 +543,7 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 		}
 		else
 		{
-			"\0\s[0]It's %(hour12)'o clock.\e"
+			"\0\s[0]%(cf)It's %(hour12)'o clock.\e"
 			//%(hour12) stores the time. This is a general top of the hour notification. I personally like this because it helps me keep track of time when I've been working on something, so when a ghost is all "Hey it's 3 o clock" I can be like woah really when did that happen. If you think this is annoying though, you can just delete this bit of dialogue to leave this else statement blank, or leave "" in here instead.
 		}
 	}
@@ -502,7 +551,6 @@ OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
 	elseif hour == 23 && minute == 55 //this checks to see if the hour is 23 and the minutes are at 55... essentially, 11:55 pm.
 	{
 		"\0\s[0]%(cf)5 minutes to midnight!\n Just letting you know in case you lost track of time, \s[6]I do that way too often.\e"
-		//Replace with what you like!
 	}
 
 	//If you're not interested in these more specific checks, you can delete those last two elseifs and just leave the one for minute==0, or clear them all out as mentioned above, although leave in the HourCheck and mikireflag bits.
@@ -582,11 +630,11 @@ OnSurfaceRestore
  {
  	if reference0 == 4 //This is checking what poses they are in. This looks to see if Girl is in pose 4 or pose 6, since she is reference0.
  	{
- 	"\0\s[4]\1\s[10]\e"
+ 	"\0\s[4]\e"
  	}
  	else
  	{
-	"\0\s[0]\1\s[10]\e"
+	"\0\s[0]\e"
 	}
  }
 

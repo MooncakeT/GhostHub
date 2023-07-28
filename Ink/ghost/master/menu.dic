@@ -1,4 +1,4 @@
-﻿//---------------------------Menus--------------------------
+//---------------------------Menus--------------------------
 //This .dic file is primarily concerned with the double-click menus for each of your ghosts. If you don't want to have menus for your characters, you'd just have to delete the OnMouseDoubleClick functions near the end of mouse.dic and then ignore this file, as none of it will be called I believe. Menus can be cool though, since you can put stuff in them and create new functions if you know what you're doing. For example, I've added a lot of games and interactions and little linked icons to my Hunter Smoker ghost to keep track of their feelings and such. Much of that is pretty complicated though (and kind of messy, cough), so I won't go into it here, but I covered some of the concepts in the coding page of the walkthrough, and enterprising ghost makers can study the menu.dic file I set up for Hunter/Smoker and see how I put it together.
 //Anyway, menu.dic also contains the settings for a config menu that will let your user change their name or pronouns if they want, as well as the talk rate of the ghost, all of which are useful things for your ghost to do. So think hard about whether or not you want to skip this file or not.
 
@@ -45,14 +45,15 @@ MenuRun
 	  //***********************************************************************
 	}
 	--
- 	"%(df)\![*]\q[What's on your mind?,OnAiTalk]\n\n[half]%(cf)"
-	"%(df)\![*]\q[Got anything to say?,OnAiTalk]\n\n[half]%(cf)"
+ 	"%(df)\![*]\q[What's on your mind?,OnAiTalk]\n\n[half]"
+	"%(df)\![*]\q[Got anything to say?,OnAiTalk]\n\n[half]"
 	--
 	"%(df)\![*]\q[I need some inspiration...,GiveInspiration]\n/
+	\![*]\q[Wanna play a game?,selectGames]\n/
 	\![*]\q[Errands,dosomething]\n\n[half]/
 	\![*]\q[Help!,TalkHelp]\n/
 	\![*]\q[Config,configmenu]\n\n/
- 	\![*]\q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)%(cf)\e"
+ 	\![*]\q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\e"
 }
 
 //Leave this alone
@@ -116,6 +117,11 @@ Select.configmenu
 		TalkConfig
 	}
 
+Select.selectGames
+{
+	playGame
+}
+
 //*********************Advanced User Info*******************************
 //Some of you may be wondering why some of these Select.options lead to another function. Why not just put the config menu coding under Select.configmenu, instead of linking to TalkConfig?
 //Basically any function that's preceded with Select. is limited in its complexity and can only be called within its own .dic file in my experience. Why should you care, you ask? Well, if you're going to link to this function any other way, such as linking it in other .dic files or as a page in a menu, it needs to be a stand-alone function so it can be properly called. I'm pretty sure.
@@ -135,15 +141,43 @@ TalkConfig
 	--
 	"\f[bold,1]Your birthday:\f[bold,0] %(birthdayprint) \f[sup,1](\q[Change it?,TEACHBDAY])\f[sup,0]\n\n"
 	--
-	"\f[bold,1]Talk Rate:\f[bold,0] - every %(talktime) \f[sup,1](\q[Change it,talkinter])\f[sup,0]\n"
+	"\f[bold,1]Talk Rate:\f[bold,0] - every %(talktime) \f[sup,1](\q[Change it,talkinter])\f[sup,0]\n\n[half]"
 	--
 	"\f[bold,1]\q[Toggle NoteThis font,togglefont]\f[bold,0]\n\n"
 	--		
 	"\f[bold,1]Times petted:\f[bold,0] %(pets)\n\n"
 	--
+	"\f[bold,1]\q[Game Stats,gameStats]\f[bold,0]\n\n"
+	--
 	"\![*]\q[Back to the menu,BACKTOMENU]\e"
 }
 
+Select.gameStats
+{
+	"\0\b[2]\_q" 
+	--
+	"\f[bold,1]Times played RPS:\f[bold,0] %(RPSplays)\n\n[half]"
+	--
+	"\f[bold,1]You won RPS:\f[bold,0] %(RPSpWins)\n\n[half]"
+	--
+	"\f[bold,1]Ink won RPS:\f[bold,0] %(RPSaiWins)\n\n[half]"
+	--
+	"\f[bold,1]Ties in RPS:\f[bold,0] %(RPSplays - RPSpWins - RPSaiWins)\n\n"
+	--
+	"\f[bold,1]Times played NG:\f[bold,0] %(NumGuessPlays)\n\n[half]"
+	--
+	"\f[bold,1]Number Guess wins:\f[bold,0] %(NumGuessWins)\n\n"
+	--
+	"\f[bold,1]Times played TTT:\f[bold,0] %(TTTplays)\n\n[half]"
+	--
+	"\f[bold,1]You won TTT:\f[bold,0] %(TTTpWins)\n\n[half]"
+	--
+	"\f[bold,1]Ink won TTT:\f[bold,0] %(TTTaiWins)\n\n[half]"
+	--
+	"\f[bold,1]Ties in TTT:\f[bold,0] %(TTTplays - TTTpWins - TTTaiWins)\n\n"
+	--
+	"\![*]\q[Back to config,configmenu]\e"
+}
 
 //These two options toggle whether or not you can delete your ghost. Leave them alone.
 
@@ -275,7 +309,7 @@ birthchecked
 		}
 	else //if the birthday is not listed above.
 		{
-			"\0\s[0]%(cf)So your birthday is %(bornmonthprint) %(borndayprint). \s[9]Let me make a note of that so I don't forget.\e"
+			"\0\s[0]%(cf)So your birthday is %(bornmonthprint) %(borndayprint).\w2 \s[9]Let me make a note of that so I don't forget.\e"
 		}
 }
 
@@ -484,9 +518,10 @@ Select.TalkHelp
 	"\0\s[11]\b2%(cf)Oh no! What do you need help with?\n\n"
  	"\0\s[0]\b2%(cf)I can try to help, \s[11]what is it?\n\n"
 	--
- 	"%(df)\![*]\q[Where did you come from again?,ComeFrom]\n/
-	\![*]\q[Why are you a ghost?,WhyGhost]\n/
-	\![*]\q[What was that about the Note This font?,HowFont]\n\n/
+ 	"%(df)\![*]\q[What was that about the Note This font?,HowFont]\n/
+ 	\![*]\q[Where did you come from again?,ComeFrom]\n/
+	\![*]\q[Why are you a ghost?,WhyGhost]\n\n/
+	\![*]\q[Who are you again?,WhoYou]\n/
 	\![*]\q[Any buttons I can press?,buttons]\n/
 	\![*]\q[Just messing with you lol,HelpJoke]\n\n/
  	\![*]\q[Back to the menu,BACKTOMENU]%(cf)\e"
@@ -515,14 +550,25 @@ Select.WhyGhost
 	"\0\s[2]%(cf)I was made for someone's birthday!\w5 \s[0]I'm one of that person's favorite characters, so I was one of the first choices for being made into a ghost! \s[2]Lucky me I was chosen!\w8\s[0]\n\n[half]The person who made me isn't too familiar with me though, \s[6]so I might be a bit out of character.\e"
 }
 
+Select.WhoYou
+{
+	"\0\s[0]%(cf)My name's Ink! \w5\s[5]I thought we already introduced ourselves?\e"
+	"\0\s[5]%(cf)Why?\w2 Did you forget?\w4 \s[0]I do that too, sometimes. \s[2]My name's Ink!\e"
+	"\0\s[0]%(cf)I'm Ink! \s[2]Nice to meet you!\e"
+}
+
 Select.HelpJoke
 {
 	"\0\s[8]%(cf)Not cool.\e"
+	"\0\s[8]%(cf)Okay...\e"
+	"\0\s[5]%(cf)Oh? \s[2]Haha, you got me!\e"
+	"\0\s[0]%(cf)Uh, okay then.\e"
+	"\0\s[2]%(cf)Haha, good one!\e"
 }
 
 Select.HowFont
 {
-	"\0\s[2]%(cf)I can talk in the Note This font, no matter what balloon you're using! \s[0]As long as it's installed I should be able to use it! Make sure it's toggled on in the Config menu, and that it is actually installed on your machine.\e"
+	"\0\s[2]%(cf)I can talk in the Note This font, no matter what balloon you're using! \s[0]As long as it's installed on your computer I should be able to use it!\n\n Make sure it's toggled on in the Config menu, and that it is actually installed on your machine.\e"
 }
 
 
@@ -534,23 +580,39 @@ Select.buttons
  	"%(df)\_qt: Say something\n/
 	r: Repeat last thing said\n/
 	f1: Open README\n\n/
- 	\![*]\q[Back to the menu,BACKTOMENU]%(cf)\e"
+ 	\![*]\q[Back to the menu,BACKTOMENU]\e"
 }
+
 
 //---- Toggle Font -------------------------------------------------------------
 Select.togglefont
 {
 	useFont = !useFont
-	"%(cf)Got it!"
+	"\0\s[0]%(cf)Got it!\e"
 }
 
-//---- GiveInspiration ---------------------------------------------------------
 
+//---- GiveItem ---------------------------------------------------------
+Select.giveItem
+{
+	"\0\s[0]%(cf)You wanted to give me something?"
+	--
+	"%(df)\![*]\q[Box,giveBox]\n\n/
+ 	\![*]\q[Nevermind,BACKTOMENU]\e"
+}
+
+Select.giveBox
+{
+	"\1\s[15]\0\s[0]%(cf)Oooh, a box! I love boxes!\e"
+}
+
+
+//---- GiveInspiration ---------------------------------------------------------
  Select.GiveInspiration
  {
  	"\0\s[5]%(cf)How about your favorite animal?\e"
  	"\0\s[1]%(cf)I'd like to see what I look like in your style!\w8\s[3]\e"
- 	"\0\s[0]%(cf)Maybe take inpiration from a friend?\n\s[2]What's something that reminds you of them?\e"
+ 	"\0\s[0]%(cf)Maybe take inpiration from a friend?\s[2]What's something that reminds you of them?\e"
  	"\0\s[0]%(cf)How about a challenge? Draw whatever is to your right at this very moment!\e"
  	"\0\s[1]%(cf)A big blob!\w8\w8\w8\w8\s[0]\e"
  	"\0\s[0]%(cf)Who's your favorite character? Why don't you draw them?\e"
@@ -580,18 +642,18 @@ Select.togglefont
  	"\0\s[2]%(cf)Something you wish you could see everyday!\e"
  	"\0\s[0]%(cf)Something you've seen on a trip!\e"
  	"\0\s[0]%(cf)One of your favorite things you own!\e"
- 	"\0\s[5]%(cf)How about something you use a lot, but don't think about much? \s[2] Let's give it some recognition!\e"
+ 	"\0\s[5]%(cf)How about something you use a lot, but don't think about much? \s[2]Let's give it some recognition!\e"
  	"\0\s[0]%(cf)Try drawing something out of only %(shapes)!\e"
  	"\0\s[1]%(cf)How about %(names) as a %(shapes)?\w5 \s[2]That'd be pretty funny!\e"
  	"\0\s[0]%(cf)Try drawing a dodecahedron!\e"
  	"\0\s[0]%(cf)Try drawing something in a different style than you usually do, or a style you want to try out!\e"
+ 	"\0\s[1]%(cf)How about you draw me with a new outfit?\w6\s[2] I like getting new clothes!\e"
+ 	"\0\s[0]%(cf)How about giving %(morenames) a new outfit?\e"
+ 	"\0\s[2]%(cf)Your favorite fruit!\e"
+ 	"\0\s[2]%(cf)Your favorite piece of clothing!\e"
+ 	"\0\s[1]%(cf)How about you give me a new outfit!\w3 If you do, I'd love to see it when you're done!\w8\s[3]\e"
+ 	"\0\s[0]%(cf)How about something to do with the last place you went?\e"
  }
-
-
-
- 
-
-
 
 
 

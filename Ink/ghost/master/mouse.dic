@@ -62,7 +62,7 @@ MouseMoveSakura
  		//petting take longer or shorter if you want. FLELEs have it set to 50 for some reason, which makes it take longer than this.
  		if stroke >= 40 
 		{
-			pets += 1
+			pets++
  			stroke = 0 //resetting the stroke count
  			//do you remember the names of the areas you set up for your collisions in surfaces.txt? This is where they come into
  			//play! This is where you'd put in the name of your collision, such as head, face, horns, tail, ears, whatever. As mentioned
@@ -80,6 +80,8 @@ MouseMoveSakura
  				"\0\s[2]%(cf)I won't turn down pats from a friend!\e"
  				"\0\s[0]%(cf)I'd give you pets too, if I could.\e"
  				"\0\s[11]%(cf)I've been pet!\e"
+ 				"\0\s[5]%(cf)Maybe %(names) will let me pet him?\e"
+ 				"\0\s[2]%(cf)Thanks!\e"
  			}
 			
  		}

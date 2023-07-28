@@ -148,6 +148,7 @@ mediums
 	"acrylic paint"
 	"oil paint"
 	"watercolor paint"
+	"clay"
 }
 
 colors
@@ -191,6 +192,7 @@ pictures
 	"pictures/picture5.png"
 	"pictures/picture6.png"
 	"pictures/picture7.png"
+	"pictures/picture8.png"
 }
 
 

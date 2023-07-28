@@ -156,7 +156,7 @@ OnInstallRefuse
 
 OnVanishSelecting
 {
-	"\0\s[0]%(cf)I'm getting uninstalled?\w8 I can just go back to the doodle-sphere instead you know!\e"
+	"\0\s[0]%(cf)I'm getting uninstalled?\w8 \s[11]I can just go back to the doodle-sphere instead you know!\e"
 }
 
 //OnVanishSelected
@@ -173,7 +173,7 @@ OnVanishSelected
 
 OnVanishCancel
 {
-	"\0\s[0]%(cf)I'm not getting uninstalled?\w8\nYay! I like hanging out here.\e"
+	"\0\s[0]%(cf)I'm not getting uninstalled?\w8\n\s[2]Yay! I like hanging out here.\e"
 }
 
 //--OnVanishButtonHold
@@ -314,8 +314,6 @@ OnUpdateComplete
 	if reference0 == "none" //if the ghost had nothing to update with
  	{
  		"\0\s[0]%(cf)There's nothing for me to update with, silly!\e"
-		
-		"\0\s[0]%(cf)Sorry, there's nothing to update right now.\e"
 	}
  	else //if the ghost has updated successfully
 	{
@@ -354,13 +352,13 @@ OnUpdate.OnDownloadBegin
  {
  	if "aitalk" _in_ reference0 //this is checking to see what kind of files are being downloaded. In this case, it's looking for files called aitalk in the download queue. If you want to have a specialized bit of dialogue for each type of file, you can expand this with elseifs and by replacing aitalk with whatever file you have in mind. Keep in mind my warning above though.
  	{
- 		"\0\s[0]%(cf)I'm going to download more things to say.\w8\e"
+ 		"\0\s[2]%(cf)I'm getting more things to say!\w8\e"
  	}
  	else //for files not specified above
  	{
 	"\0\s[0]%(cf)I'm going to get a new file!\e"
 	
-	"\0\s[0]%(cf)A new file! I wonder what it is?\e"
+	"\0\s[0]%(cf)A new file! \s[5]I wonder what it is?\e"
 	}
  }
 
@@ -600,7 +598,7 @@ OnDisplayChange
  
 OnScreenSaverStart
  {
-	"\0\s[0]%(cf)The screensaver is starting.\w7 Wiggle your mouse!\e"
+	"\0\s[0]%(cf)The screensaver is starting.\w7 \s[2]Wiggle your mouse!\e"
 	//Replace with what you want.
  }
 
@@ -692,6 +690,6 @@ OnShellScaling
 	}
 	elseif reference0 == 50 //this is 50%. You can add any percentage that's listed under shell scaling if you want using more elseifs.
 	{
-		"\0\s[0]%(cf)I'm half my original size.\w8 Was I in the way that much?\e"
+		"\0\s[0]%(cf)I'm half my original size. Was I in the way that much?\e"
 	}
 }

@@ -1,0 +1,843 @@
+//---------------------------Surfaces.txt--------------------------
+//Surfaces.txt is the backbone of the shell you make for your ghost. 
+
+//MAKE SURE ALL YOUR IMAGES ARE THE SAME SIZE. The image dimensions just need to be consistent throughout for each character, because believe me, it will make things MUCH, MUCH easier for you from this point on if you do that.
+
+//ONE MORE NOTE - If you are planning on doing a single person ghost without a sidekick character at all, all you have to do is save a blank png over all the files for the secondary character, ESPECIALLY Surface10.png. Don't delete Surface10.png or Surface10 in general.
+
+
+
+//--Main Char Poses---------------------------------------------------------
+
+//Neutral
+surface0
+{
+	element0,overlay,surface0.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlayfast,0,0
+	0pattern1,1005,5,overlayfast,0,0
+	0pattern2,1006,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1007,10,overlay,0,0
+	2pattern1,1008,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1007,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1008,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Happy
+surface1
+{
+	element0,overlay,surface1000.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1007,10,overlay,0,0
+	2pattern1,1008,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1007,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1008,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Angry
+surface2
+{
+	element0,overlay,surface1020.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlayfast,0,0
+	0pattern1,1021,5,overlayfast,0,0
+	0pattern2,1022,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1023,10,overlay,0,0
+	2pattern1,1024,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1023,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1024,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Serious
+surface3
+{
+	element0,overlay,surface1010.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlayfast,0,0
+	0pattern1,1011,5,overlayfast,0,0
+	0pattern2,1012,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1013,10,overlay,0,0
+	2pattern1,1014,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1013,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1014,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Laugh
+surface4
+{
+	element0,overlay,surface1040.png,0,0
+
+	0interval,random,1
+	0pattern0,1041,30,replace,0,0
+	0pattern1,1040,30,replace,0,0
+}
+//Sad
+surface5
+{
+	element0,overlay,surface1080.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlayfast,0,0
+	0pattern1,1081,5,overlayfast,0,0
+	0pattern2,1082,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1083,10,overlay,0,0
+	2pattern1,1084,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1083,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1084,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Eager
+surface6
+{
+	element0,overlay,surface1050.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlayfast,0,0
+	0pattern1,1051,5,overlayfast,0,0
+	0pattern2,1052,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1053,10,overlay,0,0
+	2pattern1,1054,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1053,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1054,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Disappointed
+surface7
+{
+	element0,overlay,surface1060.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlayfast,0,0
+	0pattern1,1061,5,overlayfast,0,0
+	0pattern2,1062,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1063,10,overlay,0,0
+	2pattern1,1064,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1063,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1064,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Hungry
+surface8
+{
+	element0,overlay,surface1070.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlayfast,0,0
+	0pattern1,1071,5,overlayfast,0,0
+	0pattern2,1072,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1073,10,overlay,0,0
+	2pattern1,1074,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1073,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1074,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Beg
+surface9
+{
+	element0,overlay,surface1090.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1093,10,overlay,0,0
+	2pattern1,1094,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1093,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1094,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+
+
+
+//--2nd Char Poses------------------
+
+//Neutral
+surface10
+{
+	//collision0,50,22,112,60,Head
+
+	element0,overlay,surface10.png,0,0
+
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlayfast,0,0
+	0pattern1,2006,5,overlayfast,0,0
+	0pattern2,2007,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2008,10,overlay,0,0
+	2pattern1,2009,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2008,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2009,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Happy
+surface11
+{
+	element0,overlay,surface2100.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2103,10,overlay,0,0
+	2pattern1,2104,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2103,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2104,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Question
+surface12
+{
+	element0,overlay,surface2000.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,2001,5,overlayfast,0,0
+	0pattern2,2002,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2003,10,overlay,0,0
+	2pattern1,2004,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2003,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2004,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Smirk
+surface13
+{
+	element0,overlay,surface2010.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,2001,5,overlayfast,0,0
+	0pattern2,2002,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+}
+//Angry
+surface14
+{
+	element0,overlay,surface2090.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,2091,5,overlayfast,0,0
+	0pattern2,2092,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2093,10,overlay,0,0
+	2pattern1,2094,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2093,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2094,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Beg
+surface15
+{
+	element0,overlay,surface2020.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2023,10,overlay,0,0
+	2pattern1,2024,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2023,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2024,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Laugh
+surface16
+{
+	element0,overlay,surface2030.png,0,0
+
+	0interval,random,1
+	0pattern0,2031,30,replace,0,0
+	0pattern1,2030,30,replace,0,0
+}
+//Woe is me
+surface17
+{
+	element0,overlay,surface2040.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2023,10,overlay,0,0
+	2pattern1,2024,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2023,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2024,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Smirk2
+surface18
+{
+	element0,overlay,surface2050.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,2051,5,overlayfast,0,0
+	0pattern2,2052,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2053,10,overlay,0,0
+	2pattern1,2054,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2053,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2054,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Sad
+surface19
+{
+	element0,overlay,surface2060.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,2061,5,overlayfast,0,0
+	0pattern2,2062,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2063,10,overlay,0,0
+	2pattern1,2064,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2063,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2064,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0	
+}
+//Yak
+surface20{
+	element0,overlay,surface2070.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2073,10,overlay,0,0
+	2pattern1,2074,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2073,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2074,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0	
+}
+//Think
+surface21
+{
+	element0,overlay,surface2080.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,2081,5,overlayfast,0,0
+	0pattern2,2082,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,2083,10,overlay,0,0
+	2pattern1,2084,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,2083,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,2084,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Book
+surface22
+{
+	element0,overlay,surface2110.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,2111,10,replace,0,0
+	1pattern1,2110,10,replace,0,0
+}
+
+//--More 1st Char Poses------------------
+//Confused
+surface23
+{
+	element0,overlay,surface1100.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,1101,5,overlayfast,0,0
+	0pattern2,1102,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,1103,10,overlay,0,0
+	2pattern1,1104,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,1103,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,1104,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+
+//--3rd Char Poses------------------
+//Idle
+surface24
+{
+	element0,overlay,surface20.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,3005,5,overlayfast,0,0
+	0pattern2,3006,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,3007,10,overlay,0,0
+	2pattern1,3008,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,3007,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,3008,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Happy
+surface25{
+	element0,overlay,surface3000.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,3007,10,overlay,0,0
+	2pattern1,3008,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,3007,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,3008,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Angry
+surface26
+{
+	element0,overlay,surface3010.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,3011,5,overlayfast,0,0
+	0pattern2,3012,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,3013,10,overlay,0,0
+	2pattern1,3014,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,3013,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,3014,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Sad
+surface27{
+	element0,overlay,surface3020.png,0,0
+
+	//Blink
+	0interval,random,4
+	0pattern0,-1,10,overlay,0,0
+	0pattern1,3021,5,overlayfast,0,0
+	0pattern2,3022,10,overlayfast,0,0
+	0pattern3,-1,7,overlay,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,3023,10,overlay,0,0
+	2pattern1,3024,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,3023,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,3024,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Beg
+surface28{
+	element0,overlay,surface3040.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,0,0,alternativestart,[2.3.4]
+
+	2interval,never
+	2pattern0,3043,10,overlay,0,0
+	2pattern1,3044,13,overlay,0,0
+	2pattern2,-1,10,overlay,0,0
+
+	3interval,never
+	3pattern0,3043,14,overlay,0,0
+	3pattern1,-1,10,overlay,0,0
+
+	4interval,never
+	4pattern0,3044,14,overlay,0,0
+	4pattern1,-1,10,overlay,0,0
+}
+//Laugh
+surface29{
+	element0,overlay,surface3000.png,0,0
+}
+//Book
+surface30{
+	element0,overlay,surface3030.png,0,0
+
+	//Talk
+	1interval,talk,4
+	1pattern0,3030,10,replace,0,0
+	1pattern1,3031,10,replace,0,0
+}
+
+
+//--surface.append-------------------------------------------------------------------
+//Surface.append basically applies the coding within the brackets to the poses specified in the number range. Specifically in this case it applies to collisions. If the collision areas for your ghost don't change very much from pose to pose, then you can set them here for multiple surfaces at once and save yourself some time.
+
+surface.append0-5 //this is appending this code to Surface500 through Surface590.
+//surface.append500-590,205 would append the code to Surface500 to Surface590, as well as Surface205. 
+//surface.append500-590,205,!507-509 it would do the same, except it would skip Surfaces507 through 509.
+//you can have multiple surface.appends as well, if you want to append one set of code to one range of surfaces and another to another. For example, one set of collisions to your main character and one to your side character.
+{
+collision0,60,32,124,82,Head
+
+//Make sure to put surface.append at the end of your file, so it can append the values to surfaces that exist.
+
+//--bind-------------------------------------------------------------------------------
+
+//Bind is an interval function only used for dress-up items, therefore if your ghost has no dress-up items, you will not need to bind anything and can safely disregard this. See the walkthrough page about clothing for more details about bind.
+
+//51interval,bind
+//51pattern0,999,2,add,0,0
+
+//One final note on bind, note that it is also under surface.append along with the collisions up there. Meaning that this clothing would bind across those multiple surfaces just like the collisions.
+
+//You can use surface.append to technically apply anything across multiple poses, I'm pretty sure... even images. I haven't messed with this too much myself, but I'm pretty sure it's possible.
+}
+
+surface.append6-9
+{
+collision0,25,55,100,110,Head
+}
+
+surface.append10,11,14,16-21
+{
+collision0,80,35,128,86,Head
+}
+
+surface.append24-27
+{
+	collision0,70,60,130,98,Head
+}
+
+//--Unique Collision cursors------------------
+
+//sakura.cursor 
+//{ 
+//mouseup0,Head,system:hand 
+//mousedown0,Head,system:finger 
+//mouseup1,Face,system:hand 
+//mousedown1,Face,system:grip 
+//} 
+
+//What this does is change the mouse cursor. You can see it's split into mouseup and mousedown, and it uses the names you gave your Collisions up there. So when the mouse is hovering over Girl's head, it uses the system cursor that looks like a hand. When you click and hold, it looks like a finger. You can keep adding unique cursors for all your collisions by sequentially numbering them, like mouseup/down2, mouseup/down3, and so on.
+
+//The system cursors you can use for this are "arrow", "cross", "no", "hand", "grip", "finger", "wait", "text", "move", and "help".
+
+//To set this up for the secondary character, just change sakura to kero, as usual.
+
+
+//--Tooltips------------------
+
+//Maybe you'd like a tooltip to pop up when your user is hovering over a hitbox on your ghost. It works much the same as above!
+
+//sakura.tooltips 
+//{ 
+//Head,This is Girl's head. 
+//Face,This is Girl's face.  
+//}
+
+//Basically put the name of your collision first, then what you want the tooltip to say.
+//Like above, replace sakura with kero for the secondary character.
+
+
+
+//--Surface.alias------------------
+
+
+//There is another function along the same lines of surface.append and it's surface.alias. What it does is assign a range of numbers to a single number or word that can be called using \s[].
+
+//sakura.surface.alias
+//{
+//6666,[1229,1230,1231,1235]
+//}
+
+//What this means is that I could then go \s[6666] in dialogue and it would call any of these four Surfaces in the brackets. You can do words as well, like creepy,[1229,1230,1231,1235], and then you could call it with \s[creepy]. This may sound like a convenient shortcut to using words instead of numbers for your ghost's expressions, but I'd probably stick with numbers, really. It just feels like it'd backfire on you eventually.
+//You can do the same thing with the side character by using kero instead of sakura.
+
+//kero.surface.alias
+//{
+//6667,[1228,1232,1233]
+//6668,[1228,1232,1233,1234]
+//}
+//And as you can see, you can have multiple surface aliases set up at any point. In this example, kero has both 6667 and 6668 defined as a range of Surfaces. So \s[6667] would call one of those three Surfaces, and \s[6668] would call one of those four Surfaces.
+
+//---
+
+
+
+//*********************More on SERIKO coding*******************************
+
+//You can read about these on the SERIKO page on the walkthrough as well with (presumably) easier formatting on the eyes lol. Actually since this is supposed to be trimmed down I'm just going to cut the whole thing and tell you to go to the seriko page on the site.
+
+//***********************************************************************

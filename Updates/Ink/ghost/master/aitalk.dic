@@ -153,6 +153,7 @@ RandomTalk : nonoverlap_pool
 		"%(cf)Maybe photography?"
 		"%(cf)Maybe knitting?"
 		"%(cf)Maybe upcycling?"
+		"%(cf)Maybe I could try making a game?"
 	--
 	"\e"
 	}

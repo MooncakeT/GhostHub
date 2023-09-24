@@ -5,9 +5,7 @@ Ink!Sans ghost for use with SSP (or other desktop buddy program)
 -Get inspiration from Ink
 
 Latest update:
--Reconfigued some menus
--Play games with Ink
--Updated & added some dialouge
+-Play word guess with Ink
 
 Ink!Sans created by @comyet
 Ghost tutorial & template created by @zarla-s

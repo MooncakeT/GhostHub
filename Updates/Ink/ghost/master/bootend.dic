@@ -82,6 +82,8 @@ OnFirstBoot
 	TTTplays = 0 // To track times played TTT
 	TTTpWins = 0 // To track TTT player wins
 	TTTaiWins = 0 // To track TTT ai wins
+	HangmanPlays = 0 // To track times played word guess
+	HangmanWins = 0 // To track times won word guess
 
 	if reference0 == 0 //Don't touch this line.
  	{

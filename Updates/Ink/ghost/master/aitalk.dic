@@ -172,7 +172,7 @@ RandomTalk : nonoverlap_pool
 	}
 	
 	{
-		"\0\s[0]%(cf)I asked %(names) his thoughts on %(shapes)s. "
+		"\0\s[0]%(cf)I asked %(names) his thoughts on %(shapes)s.\w8 "
 	--
 		"\0\s[12]%(cf)He just ignored me..."
 
@@ -221,12 +221,17 @@ RandomTalk : nonoverlap_pool
 
 	"\0\s[5]%(cf).\w3.\w3.\w8\n\n[half]\s[0]I challenge you to a game of Tic-Tac-Toe!\n\n%(df)\![*]\q[You're on!,choiceTTT]     \![*]\q[Not right now...,gameDeny]\e"
 
+	"\0\s[5]%(cf).\w3.\w3.\w8\n\n[half]\s[0]I challenge you to a game of Number Guess!\n\n%(df)\![*]\q[You're on!,choiceNumGuess]     \![*]\q[Not right now...,gameDeny]\e"
+
+	"\0\s[5]%(cf).\w3.\w3.\w8\n\n[half]\s[0]I challenge you to a game of Word Guess!\n\n%(df)\![*]\q[You're on!,choiceHangman]     \![*]\q[Not right now...,gameDeny]\e"
+
 	{
 		"\0\s[0]%(cf)Wanna play a game?\n\n"
 		--
 		"%(df)\![*]\q[You're on!,choiceRPS]"
 		"%(df)\![*]\q[You're on!,choiceNumGuess]"
 		"%(df)\![*]\q[You're on!,choiceTTT]"
+		"%(df)\![*]\q[You're on!,choiceHangman]"
 		--
 		"\![*]\q[Not right now...,gameDeny]"
 		--

@@ -176,6 +176,10 @@ Select.gameStats
 	--
 	"\f[bold,1]Ties in TTT:\f[bold,0] %(TTTplays - TTTpWins - TTTaiWins)\n\n"
 	--
+	"\f[bold,1]Times played WG:\f[bold,0] %(HangmanPlays)\n\n[half]"
+	--
+	"\f[bold,1]Word Guess wins:\f[bold,0] %(HangmanWins)\n\n"
+	--
 	"\![*]\q[Back to config,configmenu]\e"
 }
 
@@ -518,13 +522,23 @@ Select.TalkHelp
 	"\0\s[11]\b2%(cf)Oh no! What do you need help with?\n\n"
  	"\0\s[0]\b2%(cf)I can try to help, \s[11]what is it?\n\n"
 	--
- 	"%(df)\![*]\q[What was that about the Note This font?,HowFont]\n/
+ 	HelpMenuRun
+}
+
+HelpMenuRun
+{
+	"\b2%(df)\![*]\q[What about the Note This font?,HowFont]\n/
  	\![*]\q[Where did you come from again?,ComeFrom]\n/
 	\![*]\q[Why are you a ghost?,WhyGhost]\n\n/
 	\![*]\q[Who are you again?,WhoYou]\n/
 	\![*]\q[Any buttons I can press?,buttons]\n/
 	\![*]\q[Just messing with you lol,HelpJoke]\n\n/
  	\![*]\q[Back to the menu,BACKTOMENU]%(cf)\e"
+}
+
+Select.BACKTOHELP
+{
+	HelpMenuRun
 }
 
 Select.ComeFrom
@@ -539,48 +553,48 @@ Select.GetLink
 
 Select.NoLink
 {
-	"%(cf)Alrighty."
-	"%(cf)Okie dokie."
-	"%(cf)Okay."
-	"%(cf)Alright."
+	"%(cf)Alrighty.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]"
+	"%(cf)Okie dokie.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]"
+	"%(cf)Okay.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]"
+	"%(cf)Alright.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]"
 }
 
 Select.WhyGhost
 {
-	"\0\s[2]%(cf)I was made for someone's birthday!\w5 \s[0]I'm one of that person's favorite characters, so I was one of the first choices for being made into a ghost! \s[2]Lucky me I was chosen!\w8\s[0]\n\n[half]The person who made me isn't too familiar with me though, \s[6]so I might be a bit out of character.\e"
+	"\0\s[2]%(cf)I was made for someone's birthday!\w5 \s[0]I'm one of that person's favorite characters, so I was one of the first choices for being made into a ghost! \s[2]Lucky me I was chosen!\w8\s[0]\n\n[half]The person who made me isn't too familiar with me though, \s[6]so I might be a bit out of character sometimes.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
 }
 
 Select.WhoYou
 {
-	"\0\s[0]%(cf)My name's Ink! \w5\s[5]I thought we already introduced ourselves?\e"
-	"\0\s[5]%(cf)Why?\w2 Did you forget?\w4 \s[0]I do that too, sometimes. \s[2]My name's Ink!\e"
-	"\0\s[0]%(cf)I'm Ink! \s[2]Nice to meet you!\e"
+	"\0\s[0]%(cf)My name's Ink! \w5\s[5]I thought we already introduced ourselves?\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[5]%(cf)Why?\w2 Did you forget?\w4 \s[0]I do that too, sometimes. \s[2]My name's Ink!\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[0]%(cf)I'm Ink! \s[2]Nice to meet you!\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
 }
 
 Select.HelpJoke
 {
-	"\0\s[8]%(cf)Not cool.\e"
-	"\0\s[8]%(cf)Okay...\e"
-	"\0\s[5]%(cf)Oh? \s[2]Haha, you got me!\e"
-	"\0\s[0]%(cf)Uh, okay then.\e"
-	"\0\s[2]%(cf)Haha, good one!\e"
+	"\0\s[8]%(cf)Not cool.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[8]%(cf)Okay...\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[5]%(cf)Oh? \s[2]Haha, you got me!\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[0]%(cf)Uh, okay then.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[2]%(cf)Haha, good one!\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
 }
 
 Select.HowFont
 {
-	"\0\s[2]%(cf)I can talk in the Note This font, no matter what balloon you're using! \s[0]As long as it's installed on your computer I should be able to use it!\n\n Make sure it's toggled on in the Config menu, and that it is actually installed on your machine.\e"
+	"\0\s[2]%(cf)I can talk in the Note This font, no matter what balloon you're using! \s[0]As long as it's installed on your computer I should be able to use it!\n\n Make sure it's toggled on in the Config menu, and that it is actually installed on your machine.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
 }
 
 
 //---- buttons ----------------------------------------------------------------
 Select.buttons
 {
-	"\0\s[0]\b2%(cf)I do, actually!\n\n"
+	"\0\s[0]%(cf)I do, actually!\n\n"
 	--
  	"%(df)\_qt: Say something\n/
 	r: Repeat last thing said\n/
 	f1: Open README\n\n/
- 	\![*]\q[Back to the menu,BACKTOMENU]\e"
+ 	\![*]\q[Back to the menu,BACKTOHELP]\e"
 }
 
 

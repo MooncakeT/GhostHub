@@ -5,7 +5,8 @@ playGame
 	--
  	"%(df)\![*]\q[Rock Paper Scissors,choiceRPS]\n\n[half]/
  	\![*]\q[Number Guess,choiceNumGuess]\n\n[half]/
- 	\![*]\q[Tic Tac Toe,choiceTTT]\n\n/
+ 	\![*]\q[Tic Tac Toe,choiceTTT]\n\n[half]/
+ 	\![*]\q[Word Guess,choiceHangman]\n\n/
  	\![*]\q[Back to the menu,BACKTOMENU]\e"
 }
 
@@ -29,6 +30,20 @@ Select.choiceTTT
 	pchoice = "_________"
 	TTTplays++
 	playTTT
+}
+
+Select.choiceHangman
+{
+	HangmanPlays++
+	aichoice = hangmanwords
+	pchoice = ""
+	counter = 0
+	while (counter < STRLEN(aichoice))
+	{
+		pchoice = SUBSTR(pchoice,0,STRLEN(pchoice)) + "-"
+		counter++
+	}
+	playHangman
 }
 
 
@@ -166,10 +181,61 @@ Select.NumForfeit
 }
 
 
+//---- Hangman ---------------------------------------------------------------------
+playHangman
+{
+	"\0\s[0]%(cf)\![enter,passivemode]I'm thinking of a word, try to guess what letters are in it!\n\n[half]%(df)%(pchoice)\n\n%(df)\![*]\q[I give up!,WordForfeit]\![open,inputbox,OnLetterGuess]"
+}
+
+OnLetterGuess{
+	reference0 = TOLOWER(reference0)
+	if (STRLEN(reference0) == 0){
+		"\0\s[0]%(cf)You have to guess something!\n\n%(df)\![*]\q[I give up!,WordForfeit]\![open,inputbox,OnLetterGuess]"
+	}
+	if (STRLEN(reference0) > 1){
+		"\0\s[0]%(cf)Only guess 1 letter please!\n\n%(df)\![*]\q[I give up!,WordForfeit]\![open,inputbox,OnLetterGuess]"
+	}
+	/*if (!ISALNUM(reference0)){
+		"\0\s[0]%(cf)You have to guess a letter!\n\n%(df)\![*]\q[I give up!,WordForfeit]\![open,inputbox,OnLetterGuess]"
+	}
+*/
+	counter = 0
+	while (counter < STRLEN(aichoice)){
+		if (reference0 == SUBSTR(aichoice,counter,1)){
+			pchoice = SUBSTR(pchoice,0,counter) + reference0 + SUBSTR(pchoice,counter+1,STRLEN(pchoice)-counter)
+		}
+		counter++
+	}
+	HMcheckWin
+}
+
+HMcheckWin{
+	if (pchoice == aichoice){
+		HangmanWins++
+		"\0\s[2]%(cf)Yay! You guessed my word! It was '%(aichoice)'!\![leave,passivemode]\n\n"
+		--
+		"%(df)\![*]\q[Again again!,choiceHangman]\n\n[half]/
+		%(df)\![*]\q[Wanna play something else?,playGame]\n\n/
+ 		\![*]\q[No thanks,CANCEL]\e"
+	}else{
+		"\0\s[0]%(cf)Guess again!\n\n[half]%(df)%(pchoice)\n\n%(df)\![*]\q[I give up!,WordForfeit]\![open,inputbox,OnLetterGuess]"
+	}
+}
+
+Select.WordForfeit
+{
+	"\0\s[0]%(cf)\![close,inputbox]My word was '%(aichoice)'. I'm sure you'll get it next time!\![leave,passivemode]\n\n"
+	--
+	"%(df)\![*]\q[Again again!,choiceHangman]\n\n[half]/
+	%(df)\![*]\q[Wanna play something else?,playGame]\n\n/
+ 	\![*]\q[No thanks,CANCEL]\e"
+}
+
+
 //---- Tic Tac Toe ----------------------------------------------------------------
 playTTT
 {
-	"\0\s[0]%(df) \q[%(SUBSTR(pchoice,0,1)),choice0] | \q[%(SUBSTR(pchoice,1,1)),choice1] | \q[%(SUBSTR(pchoice,2,1)),choice2] \n \q[%(SUBSTR(pchoice,3,1)),choice3] | \q[%(SUBSTR(pchoice,4,1)),choice4] | \q[%(SUBSTR(pchoice,5,1)),choice5] \n \q[%(SUBSTR(pchoice,6,1)),choice6] | \q[%(SUBSTR(pchoice,7,1)),choice7] | \q[%(SUBSTR(pchoice,8,1)),choice8] \e"
+	"\0\s[0]%(df)\f[height,18] \q[%(SUBSTR(pchoice,0,1)),choice0] | \q[%(SUBSTR(pchoice,1,1)),choice1] | \q[%(SUBSTR(pchoice,2,1)),choice2] \n \q[%(SUBSTR(pchoice,3,1)),choice3] | \q[%(SUBSTR(pchoice,4,1)),choice4] | \q[%(SUBSTR(pchoice,5,1)),choice5] \n \q[%(SUBSTR(pchoice,6,1)),choice6] | \q[%(SUBSTR(pchoice,7,1)),choice7] | \q[%(SUBSTR(pchoice,8,1)),choice8] \f[height,default]\e"
 }
 
 TTTcheckWin
@@ -413,9 +479,10 @@ Select.choice0
 	if SUBSTR(pchoice,0,1) == "_"
 	{
 		pchoice = "X" + SUBSTR(pchoice,1,8)
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }
 
 Select.choice1
@@ -423,9 +490,10 @@ Select.choice1
 	if SUBSTR(pchoice,1,1) == "_"
 	{
 		pchoice = SUBSTR(pchoice,0,1) + "X" + SUBSTR(pchoice,2,7)
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }
 
 Select.choice2
@@ -433,9 +501,10 @@ Select.choice2
 	if SUBSTR(pchoice,2,1) == "_"
 	{
 		pchoice = SUBSTR(pchoice,0,2) + "X" + SUBSTR(pchoice,3,6)
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }
 
 Select.choice3
@@ -443,9 +512,10 @@ Select.choice3
 	if SUBSTR(pchoice,3,1) == "_"
 	{
 		pchoice = SUBSTR(pchoice,0,3) + "X" + SUBSTR(pchoice,4,5)
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }
 
 Select.choice4
@@ -453,9 +523,10 @@ Select.choice4
 	if SUBSTR(pchoice,4,1) == "_"
 	{
 		pchoice = SUBSTR(pchoice,0,4) + "X" + SUBSTR(pchoice,5,4)
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }
 
 Select.choice5
@@ -463,9 +534,10 @@ Select.choice5
 	if SUBSTR(pchoice,5,1) == "_"
 	{
 		pchoice = SUBSTR(pchoice,0,5) + "X" + SUBSTR(pchoice,6,3)
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }
 
 Select.choice6
@@ -473,9 +545,10 @@ Select.choice6
 	if SUBSTR(pchoice,6,1) == "_"
 	{
 		pchoice = SUBSTR(pchoice,0,6) + "X" + SUBSTR(pchoice,7,2)
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }
 
 Select.choice7
@@ -483,9 +556,10 @@ Select.choice7
 	if SUBSTR(pchoice,7,1) == "_"
 	{
 		pchoice = SUBSTR(pchoice,0,7) + "X" + SUBSTR(pchoice,8,1)
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }
 
 Select.choice8
@@ -493,7 +567,8 @@ Select.choice8
 	if SUBSTR(pchoice,8,1) == "_"
 	{
 		pchoice = SUBSTR(pchoice,0,8) + "X"
+		TTTcheckWin
+	}else{
+		playTTT
 	}
-
-	TTTcheckWin
 }

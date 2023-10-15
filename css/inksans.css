@@ -1,0 +1,161 @@
+/*This is a CSS comment! Anything between these tags will not be run and is for your reference. Everything in this file has to do with how the website looks; I've pointed out areas where you can pick text/background colors, etc. If you want to look into doing more specific effects, google is your best friend! You can also look at what's available at https://www.w3schools.com/ */
+
+/*This affects every element on the site. You can change the font and font color here.*/
+*
+{ 
+    font-family: 'Tahoma', sans-serif;
+    color: #222020; /*Text color*/
+    text-align: left;
+}
+
+body
+{
+    background: #815124; /*This is the background color for the whole site*/
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+article
+{
+    background: #f9d6b2; /*This is the white boxes that the text is in. You can change this to anything you like*/
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
+}
+
+footer
+{
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background: #f9d6b2;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1
+{
+    text-align: center;
+}
+
+h2
+{
+    text-align: center;
+}
+
+a
+{
+    color: #6f838b; /*This is the color for links, such as the download link*/
+    text-decoration: None;
+    font-weight: bold;
+}
+
+.center
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /*If you want your images to be perfectly square, remove this bit of code*/
+}
+
+.sidebar {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 0%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #271402;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  transition: width .5s;
+}
+
+/* The navigation menu links */
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #A3A3A3;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar p {
+  padding: 6px 8px 6px 16px;
+  text-decoration: underline;
+  font-size: 25px;
+  color: #A3A3A3;
+  display: block;
+}
+
+.openbtn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #271402;
+  color: white;
+  padding: 10px 10px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  border: none;
+  position: fixed;
+  overflow-x: hidden;
+  display: inline;
+  margin-left: -5%;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.dlbutton
+{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #815124;
+    max-width: 35%;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f9d6b2;
+}
+
+.dlbutton:hover
+{
+    background-color: #271402;
+}
+
+.version
+{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10px;
+    text-align: center;
+}
+
+.version:hover
+{
+    border-radius: 5px;
+}
+
+.credit /*Please leave this credit as-is if you use the template as given! If you start making major changes, you can go ahead and get rid of it tbh. Everything I've done here is very basic HTML/CSS*/
+{
+    text-align: center;
+    color: #c4c4c4;
+    font-size: 12px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}

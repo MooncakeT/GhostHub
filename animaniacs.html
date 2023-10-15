@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<!--This is an HTML Comment! Anything in this tag will not be run as code and is for your reference only. To use this template, if you have no knowledge of HTML, just run a search in this file for 'TODO:' and follow the instructions at each one. It's just simple replacement of words and images! If you want to look into more complicated tags and such, google is your best friend, as is https://www.w3schools.com/ -->
+<script>
+    function openNav() {
+        var btnvar = document.getElementById("openBtn").getAttribute("data-openNav"); 
+        if (btnvar == "false"){
+            document.getElementById("sideNav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("openBtn").value = "<";
+            document.getElementById("openBtn").setAttribute("data-openNav", "true");
+        }else{
+            document.getElementById("sideNav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("openBtn").value = ">";
+            document.getElementById("openBtn").setAttribute("data-openNav", "false");
+        }
+    }
+</script>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Animaniacs Ukagaka</title>
+    <link rel="stylesheet" href="css\animaniacs.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="pagesImgs\brush.ico">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Animaniacs Ukagaka"/>
+    <meta property="og:description" content="A page for Mooncake's Animaniacs Ukagaka"/>
+    <meta property="og:url" content="https://MooncakeT.github.io/GhostHub/animaniacs.html"/>
+</head>
+
+<body>
+    <div id="sideNav" class="sidebar">
+        <a href="index.html">Main Page</a>
+        <p>Other Ghosts</p>
+        <a href="inksans.html">Ink!Sans</a>
+    </div>
+
+    <div id="main">
+
+        <input type="button" id="openBtn" class="openbtn" onclick="openNav()" data-openNav="false" value=">"></input>
+
+        <article>
+            <!--TODO: Put the name of your ghost here!-->
+            <h1>The Animaniacs Ukagaka</h1>
+            <!--TODO: Replace MyGhost.png in the website's folder with a picture of your ghost. You'll also need to get the width/height of your image and put them in the code below. You can change the alt text to be a description of your image, or leave it as is.-->
+            <img src="pagesImgs\splashAnimaniacs.png" alt="Picture of ghost" width="375" height="356" class="center">
+            <!--TODO: replace the link here with a link to your latest .nar download! If you use Mediafire, you can see how many people have downloaded your file, but any file hosting site should work fine.-->
+            <br>
+            <div class="dlbutton"><a href="nars/The_Animaniacs.nar" download="true">Download the latest .nar file!</a></div>
+        
+            <p>The Animaniacs are looking for some fun! (Or someone to annoy...)</p>
+            <p>Yakko, Wakko, and Dot were just passing through, but it seems that they've taken a liking your desktop! They like playing games with you, or even just being pet! (Although they do get a bit jelous sometimes.)</p>
+        
+            <br>
+
+            <h1>Newest Update</h1>
+
+            <div class="version">
+               <b> (10/12/23)</b>
+                <ul>
+                    <li>Website page launch!</li>
+                    <li>The Animaniacs now update! (Hopefully)</li>
+                </ul>
+                <br>
+            </div>
+        </article>
+      
+        <footer>
+            Links!<br>
+            <a href="https://mooncake-t.tumblr.com/">Mooncake's Tumblr</a> | 
+            <a href="https://www.ashido.com/ukagaka/">Zarla's Ukagaka Tutorial</a> |
+            <a href="https://ukagaka.zichqec.com/">Zi's Ukagaka Tutorial</a>
+            <br>
+        </footer>
+    </div>
+</body>
+</html>

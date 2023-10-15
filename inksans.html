@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<!--This is an HTML Comment! Anything in this tag will not be run as code and is for your reference only. To use this template, if you have no knowledge of HTML, just run a search in this file for 'TODO:' and follow the instructions at each one. It's just simple replacement of words and images! If you want to look into more complicated tags and such, google is your best friend, as is https://www.w3schools.com/ -->
+<script>
+    function openNav() {
+        var btnvar = document.getElementById("openBtn").getAttribute("data-openNav"); 
+        if (btnvar == "false"){
+            document.getElementById("sideNav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("openBtn").value = "<";
+            document.getElementById("openBtn").setAttribute("data-openNav", "true");
+        }else{
+            document.getElementById("sideNav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("openBtn").value = ">";
+            document.getElementById("openBtn").setAttribute("data-openNav", "false");
+        }
+    }
+</script>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink!Sans Ukagaka</title>
+    <link rel="stylesheet" href="css\inksans.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="pagesImgs\brush.ico">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Ink!Sans Ukagaka"/>
+    <meta property="og:description" content="A page for Mooncake's Ink!Sans Ukagaka"/>
+    <meta property="og:url" content="https://MooncakeT.github.io/GhostHub/index.html"/>
+</head>
+
+<body>
+    <div id="sideNav" class="sidebar">
+        <a href="index.html">Main Page</a>
+        <p>Other Ghosts</p>
+        <a href="animaniacs.html">The Animaniacs</a>
+    </div>
+
+    <div id="main">
+
+        <input type="button" id="openBtn" class="openbtn" onclick="openNav()" data-openNav="false" value=">"></input>
+
+        <article>
+            
+            <h1>Ink!Sans</h1>
+            
+            <img src="pagesImgs\splashInk.png" alt="Picture of ghost" width="375" height="356" class="center">
+            
+            <br>
+            <div class="dlbutton"><a href="nars/Ink.nar" download="true">Download the latest .nar file!</a></div>
+            
+            <p>Ink is exploring the multiverse! Perhaps you can open a portal to your computer for him?</p>
+            <p>The self-proclaimed guardian of the AUs is here to keep you company! He'd love to chat with you, or give you inspiration for things to draw. He even has some games to play! He'll tell you about other AUs, how things are going in the doodle-sphere, or even just about things on his to-do list.</p>
+        
+            <br>
+
+            <h1>Newest Update</h1>
+
+            <div class="version">
+               <b> (10/12/23)</b>
+                <ul>
+                    <li>Website page launch!</li>
+                    <li>Ink now updates! (Hopefully)</li>
+                </ul>
+                <br>
+            </div>
+        </article>
+      
+        <footer>
+            Links!<br>
+            <a href="https://mooncake-t.tumblr.com/">Mooncake's Tumblr</a> | 
+            <a href="https://www.ashido.com/ukagaka/">Zarla's Ukagaka Tutorial</a> |
+            <a href="https://ukagaka.zichqec.com/">Zi's Ukagaka Tutorial</a>
+            <br>
+        </footer>
+    </div>
+</body>
+</html>

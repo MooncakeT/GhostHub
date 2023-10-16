@@ -82,6 +82,7 @@ MouseMoveSakura
  				"\0\s[11]%(cf)I've been pet!\e"
  				"\0\s[5]%(cf)Maybe %(names) will let me pet him?\e"
  				"\0\s[2]%(cf)Thanks!\e"
+ 				"\0\s[5]%(cf)I wonder if there's an AU where people talk with each other through pets?\e"
  			}
 			
  		}

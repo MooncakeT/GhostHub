@@ -140,6 +140,8 @@ RandomTalk : nonoverlap_pool
 
 	"\0\s[5]%(cf)I wonder if %(names) tried those %(mediums)s yet.\w2.\w2.\e"
 
+	"\0\s[0]%(cf)Hydration time!\e"
+
 // Chunks of dialogue
 	{
 		"\0\s[0]%(cf)I've been thinking about trying out a new hobby.\w8\n\s[5]"

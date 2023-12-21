@@ -50,12 +50,13 @@ MenuRun
 	--
 	"%(df)\![*]\q[I need some inspiration...,GiveInspiration]\n/
 	\![*]\q[Wanna play a game?,selectGames]\n/
-	\![*]\q[Chat,chatInk]\n\n[half]/
 	\![*]\q[Errands,dosomething]\n/
 	\![*]\q[Help!,TalkHelp]\n/
 	\![*]\q[Config,configmenu]\n\n/
  	\![*]\q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\e"
 }
+
+//\![*]\q[Chat,chatInk]\n\n[half]/
 
 //Leave this alone
 OnLastTalk 

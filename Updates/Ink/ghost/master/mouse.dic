@@ -71,7 +71,7 @@ MouseMoveSakura
 			if reference4 == "Head" 
  			{
 				"\0\s[2]%(cf)That's kind of nice!\e"
-				"\0\s[0]%(cf)Careful you don't get any ink on your hand.\e"
+				"\0\s[0]%(cf)Careful you don't get any ink on yourself.\e"
 				"\0\s[6]%(cf)Is my face squishy or something?\e"
 				"\0\s[0]%(cf)I \f[bold,true]told\f[bold,false] %(names) I don't bite.\e"
  				"\0\s[6]%(cf)This has certainly never happened to me before.\e"
@@ -82,9 +82,8 @@ MouseMoveSakura
  				"\0\s[11]%(cf)I've been pet!\e"
  				"\0\s[5]%(cf)Maybe %(names) will let me pet him?\e"
  				"\0\s[2]%(cf)Thanks!\e"
- 				"\0\s[5]%(cf)I wonder if there's an AU where people talk with each other through pets?\e"
+ 				"\0\s[5]%(cf)I wonder if there's an AU where people talk through pets?\e"
  			}
-			
  		}
 	}
  	else

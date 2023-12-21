@@ -50,11 +50,11 @@ Select.SetWallpaper_1
 }
 Select.SetWallpaper_2
 {
-	"\![set,wallpaper,%(Wallpaperfile),stretch]\0\s[0]%(cf)The picture is stretched.\e"
+	"\![set,wallpaper,%(Wallpaperfile),stretch]\0\s[0]%(cf)It didn't quite fit so I had to stretch it.\e"
 }
 Select.SetWallpaper_Cancel
 {
-	"\0\s[11]%(cf)Oh? Does that mean this is for me?\w8 \s[1]Thank you, thank you! \s[2]I'll hang it up in the doodle-sphere when I get back!\e"
+	"\0\s[11]%(cf)Oh? Does that mean this is for me?\w8 \s[1]Thank you! \s[2]I'll hang it up in the doodle-sphere when I get back!\e"
 }
 
 

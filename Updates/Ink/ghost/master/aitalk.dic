@@ -86,7 +86,7 @@ RandomTalk : nonoverlap_pool
 	
 	"\0\s[0]%(cf)Why don't you take a minute to tidy up your space? I always find it a bit easier to think when there's not too much clutter.\e"
 
-	"\0\s[9]%(cf).\w3.\w3.\e"
+	"\0\s[9]%(cf).\w3.\w3. \w8\w8 \s[5]\e"
 
 	"\0\s[0]%(cf)I try not to be too hard on anybody.\w8 I don't think I'd get anything done if I was!\e"
 	
@@ -124,15 +124,21 @@ RandomTalk : nonoverlap_pool
 
 	"\0\s[5]%(cf)I should visit %(names)...\w6 It's been a while since I last saw him.\e"
 
-	"\0\s[9]%(cf)Need to finish that...\e"
+	"\0\s[9]%(cf)Need to finish that.\w2.\w2.\n\w8\w8Was I using %(mediums)s or %(mediums)s?\e"
 
-	"\0\s[5]%(cf).\w3.\w3.\w8\w4\nWho wanted that thing?\e"
+	"\0\s[5]%(cf).\w3.\w3.\w8\w4\nWho wanted some %(mediums)?\e"
 
 	"\0\s[5]%(cf)I should find that book %(names) told me about...\e"
 
-	"\0\s[0]%(cf)Have you made anything lately? \w4\s[2]I'd love to see it if you have!\e"
+	"\0\s[0]%(cf)Have you made any art lately? \w4\s[2]I'd love to see it if you have!\e"
 
-	"\0\s[0]%(cf)\e"
+	"\0\s[5]%(cf)I wonder if any new portals have appeared in the doodle-sphere?\e"
+
+	"\0\s[9]%(cf)Maybe I could try using %(mediums) and %(mediums) together...\e"
+
+	"\0\s[0]%(cf)I love %(mediums).\w8\s[2] They're really fun to use!\e"
+
+	"\0\s[5]%(cf)I wonder if %(names) tried those %(mediums)s yet.\w2.\w2.\e"
 
 // Chunks of dialogue
 	{
@@ -208,14 +214,14 @@ RandomTalk : nonoverlap_pool
 	
 	//Chains
 	
-	"\0\s[1]%(cf)Oh! Idea!\w8\w8\s[4]\e:chain=achain"
+	//"\0\s[1]%(cf)Oh! Idea!\w8\w8\s[4]\e:chain=achain"
 	
-	"\0\s[0]%(cf)I've tried to prank some of the others who can travel between AUs before.\e:chain=anotherchain"
+//	"\0\s[0]%(cf)I've tried to prank some of the others who can travel between AUs before.\e:chain=anotherchain"
 	
 
 	//Answerables
 
-	"\0\s[5]%(cf)Hey, %(username), I have a question for you.\w8\n\n[half]%(df)\![*]\q[Go ahead!,question1]\e" 
+	"\0\s[5]%(cf)Hey, %(username), I have a question for you.\w8\n\n%(df)\![*]\q[Go ahead!,question1]\e" 
 
 	"\0\s[5]%(cf).\w3.\w3.\w8\n\n[half]\s[0]I challenge you to a round of Rock Paper Scissors!\n\n%(df)\![*]\q[You're on!,choiceRPS]     \![*]\q[Not right now...,gameDeny]\e"
 
@@ -233,7 +239,7 @@ RandomTalk : nonoverlap_pool
 		"%(df)\![*]\q[You're on!,choiceTTT]"
 		"%(df)\![*]\q[You're on!,choiceHangman]"
 		--
-		"\![*]\q[Not right now...,gameDeny]"
+		"     \![*]\q[Not right now...,gameDeny]"
 		--
 		"\e"
 	}
@@ -250,12 +256,12 @@ RandomTalk : nonoverlap_pool
 	}
 	
 	//You can also put in multiple ifs checking for the same thing to vary the responses. In this case, it's checking to see if they're wearing another shell. You don't need to use elseifs for this! Just an if is fine.
-	if nowshell == "partyhat"
+	/*if nowshell == "partyhat"
 	{
 		"\0\s[2]%(cf)I like wearing my party hat!\e"
 	
 		"\0\s[0]%(cf)Party hat, party hat!\e"
-	}
+	}*/
 	
 	//So you can use these to check for any number of situations. I think this feature is really neat, so I'm going to set up some quick default responses for the months, days, and time of day. If you don't want to do these, you can just delete this whole set of ifs down to the //--Double Envelopes section below.
 	//You can also nest ifs within these, so you could check if it was the 25 of April in the morning for example. You can also add or take away dialogue from these as you like, so if you want to have five dialogue options for April or one for January, you can totally do that.
@@ -387,11 +393,11 @@ RandomTalk : nonoverlap_pool
 	}
 	if weekday == 5 //Friday
 	{
-		"\0\s[0]%(cf)Any big plans for the weekend? \w5I don't have any.\n\n[half]\w8\w6\s[5]I'm pretty sure.\e"
+		"\0\s[0]%(cf)Any big plans for the weekend? \w5I don't have any.\n\n[half]\w8\w8\s[5]I'm pretty sure.\e"
 	}
 	if weekday == 6 //Saturday
 	{
-		"\0\s[12]%(cf)Unfortunately, I don't have Saturdays off. \w8\s[5]Not that I have an official job or anything...\w8\nSo I \s[2]guess I do technically have Saturdays off!\e"
+		"\0\s[12]%(cf)Unfortunately, I don't have Saturdays off. \w8\s[5]Not that I have an official job or anything...\w8\nSo I \s[2]guess I do have Saturdays off!\e"
 	}
 	
 
@@ -469,31 +475,95 @@ anotherchain
 }}CHAIN
 
 
-// Answers
+// Questions & answers
 Select.question1
 {
-
+	{
 		"\0\s[0]%(cf)Would you mind if I took inspiration from you for something to draw?\n\n[half]"
 		--
-		{
-			"%(df)\![*]\q[Not at all!,notatall]\n/
-			\![*]\q[Actually I would.,actuallywould]\e"
-		}
+		"%(df)\![*]\q[Not at all!,notatall]\n/
+		\![*]\q[Actually I would.,actuallywould]\e"
+	}
+	{
+		"\0\s[5]%(cf)Which of these animals do you like best?\n\n[half]"
+		--
+		"%(df)\![*]\q[Cats,preferCats]\n/
+		\![*]\q[Dogs,preferDogs]\n/
+		\![*]\q[Birds,preferBirds]\e"
+	}
+	{
+		"\0\s[0]%(cf)Have you ever had a quiche?\n\n[half]"
+		--
+		"%(df)\![*]\q[Yes,yesQuiche]\n/
+		\![*]\q[No,noQuiche]\e"
+	}
+	{
+		"\0\s[0]%(cf)What do you think of %(shapes)s?\n\n[half]"
+		--
+		"%(df)\![*]\q[I like it!,likeShape]\n/
+		\![*]\q[It's okay,mehShape]\n/
+		\![*]\q[I don't like it,dislikeShape]\e"
+	}
+	{
+		"\0\s[0]%(cf)Have you ever tried using %(mediums)s?\n\n[half]"
+		--
+		"%(df)\![*]\q[Yes,yesMediums]\n/
+		\![*]\q[No,noMediums]\e"
+	}
 }
 
-Select.notatall
-{
-	"\0\s[2]%(cf)Thanks! You're the best!\e"
+Select.notatall{
+	"\0\s[2]%(cf)Thanks!\w8 You're the best!\e"
 	"\0\s[0]%(cf)I'll do you proud!\e"
-	"\0\s[2]%(cf)Thanks! \s[0]I just really admire your asthetic.\e"
+	"\0\s[2]%(cf)Thanks! \w6\s[0]I just really admire your asthetic.\e"
 }
-
-Select.actuallywould
-{
+Select.actuallywould{
 	"\0\s[0]%(cf)Well, can't blame me for asking.\e"
 	"\0\s[0]%(cf)Ah, well. \s[2]Guess I'll have to look elsewhere!\e"
 }
+Select.preferCats{
+	"\0\s[2]%(cf)I like cats too!\w8 \s[0]I especially like taking naps with them.\e"
+	"\0\s[0]%(cf)I usually like cats too, \w4\s[8]but one scratched me earlier, so I'm mad at them right now.\e"
+}
+Select.preferDogs{
+	"\0\s[2]%(cf)I like dogs too!\w8 \s[12]If only they didn't try to chew on me\w2.\w2.\w2.\e"
+	"\0\s[2]%(cf)They're fun, right?\w8 And they like pets, just like me!\e"
+	"\0\s[0]%(cf)I usually like dogs too, \w4\s[8]but one almost took one of my ribs earlier, so I'm mad at them right now.\e"
+}
+Select.preferBirds{
+	"\0\s[2]%(cf)Aren't their feathers pretty?\e"
+	"\0\s[2]%(cf)I like singing with them. \w6\s[0]Or yelling, depending what kind of bird it is.\e"
+}
+Select.yesQuiche{
+	"\0\s[0]%(cf)Lucky!\w4 Would mind telling me about it sometime?\e"
+	"\0\s[11]%(cf)Ooo, where?\w8\s[2] Maybe I can get one of my own to try!\e"
+}
+Select.noQuiche{
+	"\0\s[12]%(cf)Well then, neither of us have.\w8\s[0] If you ever try one will you tell me about it?\w8\s[2] And I'll tell you about it if I ever get to try one!\e"
+}
+Select.likeShape{
+	"\0\s[2]%(cf)Me too! \w8It's such a cool shape right?\e"
+	"\0\s[2]%(cf)Hey, so does %(names)!\e"
+}
+Select.mehShape{
+	"\0\s[6]%(cf)Yeah, I haven't met too many people with opinions on specific shapes like I do.\e"
+	"\0\s[6]%(cf)That's what most people say.\e"
+}
+Select.dislikeShape{
+	"\0\s[11]%(cf)Oh, really?\w8 \s[2]How interesting!\e"
+	"\0\s[11]%(cf)Oh, really?\w8\s[2] %(names) likes them!\w8\s[0] I think.\e"
+	"\0\s[2]%(cf)Haha, neither does %(names).\e"
+}
+Select.yesMediums{
+	"\0\s[2]%(cf)Yay! I love using those, so I'm glad you got to try them!\e"
+	"\0\s[2]%(cf)Cool!\w4 \s[0]I hope you had fun!\e"
+}
+Select.noMediums{
+	"\0\s[2]%(cf)Maybe I can bring you some then!\w8\w8 \s[5] But how to get them to you?\e"
+	"\0\s[1]%(cf)Oh! \w3You should if you ever get the chance!\s[2] It's fun to try new things!\e"
+}
 
+// Answer for denying a game
 Select.gameDeny
 {
 	"\0\s[12]%(cf)Aw, alright.\e"

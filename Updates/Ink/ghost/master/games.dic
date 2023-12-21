@@ -235,7 +235,7 @@ Select.WordForfeit
 //---- Tic Tac Toe ----------------------------------------------------------------
 playTTT
 {
-	"\0\s[0]%(df)\f[height,18] \q[%(SUBSTR(pchoice,0,1)),choice0] | \q[%(SUBSTR(pchoice,1,1)),choice1] | \q[%(SUBSTR(pchoice,2,1)),choice2] \n \q[%(SUBSTR(pchoice,3,1)),choice3] | \q[%(SUBSTR(pchoice,4,1)),choice4] | \q[%(SUBSTR(pchoice,5,1)),choice5] \n \q[%(SUBSTR(pchoice,6,1)),choice6] | \q[%(SUBSTR(pchoice,7,1)),choice7] | \q[%(SUBSTR(pchoice,8,1)),choice8] \f[height,default]\e"
+	"\0\s[0]%(df)\f[height,18] \_q\q[%(SUBSTR(pchoice,0,1)),choice0] | \q[%(SUBSTR(pchoice,1,1)),choice1] | \q[%(SUBSTR(pchoice,2,1)),choice2] \n \q[%(SUBSTR(pchoice,3,1)),choice3] | \q[%(SUBSTR(pchoice,4,1)),choice4] | \q[%(SUBSTR(pchoice,5,1)),choice5] \n \q[%(SUBSTR(pchoice,6,1)),choice6] | \q[%(SUBSTR(pchoice,7,1)),choice7] | \q[%(SUBSTR(pchoice,8,1)),choice8] \f[height,default]\e"
 }
 
 TTTcheckWin

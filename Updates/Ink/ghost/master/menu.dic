@@ -50,7 +50,8 @@ MenuRun
 	--
 	"%(df)\![*]\q[I need some inspiration...,GiveInspiration]\n/
 	\![*]\q[Wanna play a game?,selectGames]\n/
-	\![*]\q[Errands,dosomething]\n\n[half]/
+	\![*]\q[Chat,chatInk]\n\n[half]/
+	\![*]\q[Errands,dosomething]\n/
 	\![*]\q[Help!,TalkHelp]\n/
 	\![*]\q[Config,configmenu]\n\n/
  	\![*]\q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\e"
@@ -543,7 +544,7 @@ Select.BACKTOHELP
 
 Select.ComeFrom
 {
-	"\0\s[0]%(cf)Well if you're asking about me, Ink, it's a bit of a long story, but if you mean me, the ghost, \s[2]you probably got me from GitHub!\w2\s[0] I can give you a link if you need it, even though I'm already right here.\n\n[half]%(df)\![*]\q[Yes please!,GetLink]\n\![*]\q[No thanks,NoLink]\n"
+	"\0\s[0]%(cf)\b2Well if you're asking about me, Ink, it's a bit of a long story, but if you mean me, the ghost, \s[2]you probably got me from GitHub!\w2\s[0] I can give you a link if you need it, even though I'm already right here.\n\n%(df)\![*]\q[Yes please!,GetLink]\n\n[half]\![*]\q[No thanks,NoLink]\n"
 }
 
 Select.GetLink
@@ -553,36 +554,73 @@ Select.GetLink
 
 Select.NoLink
 {
-	"%(cf)Alrighty.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]"
-	"%(cf)Okie dokie.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]"
-	"%(cf)Okay.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]"
-	"%(cf)Alright.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]"
+	"%(cf)Alrighty.\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]"
+	"%(cf)Okie dokie.\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]"
+	"%(cf)Okay.\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]"
+	"%(cf)Alright.\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]"
 }
 
 Select.WhyGhost
 {
-	"\0\s[2]%(cf)I was made for someone's birthday!\w5 \s[0]I'm one of that person's favorite characters, so I was one of the first choices for being made into a ghost! \s[2]Lucky me I was chosen!\w8\s[0]\n\n[half]The person who made me isn't too familiar with me though, \s[6]so I might be a bit out of character sometimes.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[2]%(cf)\b2I was made for someone's birthday!\w5 \s[0]I'm one of that person's favorite characters, so I was one of the first choices for being made into a ghost! \s[2]Lucky me I was chosen!\w8\s[0]\n\n[half]The person who made me isn't too familiar with me though, \s[6]so I might be a bit out of character sometimes.\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
 }
 
 Select.WhoYou
 {
-	"\0\s[0]%(cf)My name's Ink! \w5\s[5]I thought we already introduced ourselves?\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
-	"\0\s[5]%(cf)Why?\w2 Did you forget?\w4 \s[0]I do that too, sometimes. \s[2]My name's Ink!\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
-	"\0\s[0]%(cf)I'm Ink! \s[2]Nice to meet you!\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[0]%(cf)My name's Ink! \w5\s[5]I thought we already introduced ourselves?\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[5]%(cf)Why?\w2 Did you forget?\w4 \s[0]I do that too, sometimes. \s[2]My name's Ink!\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[0]%(cf)I'm Ink! \s[2]Nice to meet you!\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
 }
 
 Select.HelpJoke
 {
-	"\0\s[8]%(cf)Not cool.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
-	"\0\s[8]%(cf)Okay...\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
-	"\0\s[5]%(cf)Oh? \s[2]Haha, you got me!\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
-	"\0\s[0]%(cf)Uh, okay then.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
-	"\0\s[2]%(cf)Haha, good one!\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[8]%(cf)Not cool.\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[8]%(cf)Okay...\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[5]%(cf)Oh? \s[2]Haha, you got me!\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[0]%(cf)Uh, okay then.\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[2]%(cf)Haha, good one!\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
 }
 
 Select.HowFont
 {
-	"\0\s[2]%(cf)I can talk in the Note This font, no matter what balloon you're using! \s[0]As long as it's installed on your computer I should be able to use it!\n\n Make sure it's toggled on in the Config menu, and that it is actually installed on your machine.\n\n[half]\![*]\q[Back to the menu,BACKTOHELP]\e"
+	"\0\s[2]%(cf)\b2I can talk in the Note This font, no matter what balloon you're using! \s[0]As long as it's installed on your computer I should be able to use it!\n\nMake sure it's toggled on in the Config menu, and that it is actually installed on your machine.\n\n[half]%(df)\![*]\q[Back to the menu,BACKTOHELP]\e"
+}
+
+
+//---- Chat with Ink ----------------------------------------------------------------
+Select.chatInk
+{
+	"%(df)\_qChat about what?\n\n"
+	--
+	"\![*]\q[Art,chatArt]\n/
+ 	\![*]\q[Multiverse,chatMultiverse]\n\n"
+	--
+	"\![*]\q[Back to the menu,BACKTOMENU]\n/
+ 	\![*]\q[Nevermind,CANCEL]\e"
+}
+
+Select.chatArt
+{
+	"\0\s[2]%(cf)I started a new project earlier!\w7\s[0] I'll have to make sure I don't forget about the AU's while I'm working on it.\n\n"
+
+	"\0\s[5]%(cf)I don't really have anything to share on me.\w2.\w2. \s[0]Maybe I can grab something next I'm in the doodle-sphere.\n\n"
+
+	"\0\s[0]%(cf)I usually stick to pencil and paper, but\s[2] I do like to try new things when I can!\n\n"
+	--
+	"%(df)\![*]\q[Chat about something else,chatInk]\n/
+	\![*]\q[Back to the menu,BACKTOMENU]\n/
+ 	\![*]\q[All done!,CANCEL]\e"
+}
+
+Select.chatMultiverse
+{
+	"\0\s[1]%(cf)A new portal appeared in the doodle-sphere!\w8\s[2] I can't wait to see what kind of AU it is!\n\n"
+
+	"\0\s[2]%(cf)I hope new AU's never stop being created!\n\n"
+	--
+	"%(df)\![*]\q[Chat about something else,chatInk]\n/
+	\![*]\q[Back to the menu,BACKTOMENU]\n/
+ 	\![*]\q[All done!,CANCEL]\e"
 }
 
 
@@ -594,7 +632,8 @@ Select.buttons
  	"%(df)\_qt: Say something\n/
 	r: Repeat last thing said\n/
 	f1: Open README\n\n/
- 	\![*]\q[Back to the menu,BACKTOHELP]\e"
+ 	\![*]\q[Back to the menu,BACKTOHELP]\n/
+ 	\![*]\q[Thanks!,CANCEL]\e"
 }
 
 
@@ -657,7 +696,7 @@ Select.giveBox
  	"\0\s[0]%(cf)Something you've seen on a trip!\e"
  	"\0\s[0]%(cf)One of your favorite things you own!\e"
  	"\0\s[5]%(cf)How about something you use a lot, but don't think about much? \s[2]Let's give it some recognition!\e"
- 	"\0\s[0]%(cf)Try drawing something out of only %(shapes)!\e"
+ 	"\0\s[0]%(cf)Try drawing something out of only %(shapes)s!\e"
  	"\0\s[1]%(cf)How about %(names) as a %(shapes)?\w5 \s[2]That'd be pretty funny!\e"
  	"\0\s[0]%(cf)Try drawing a dodecahedron!\e"
  	"\0\s[0]%(cf)Try drawing something in a different style than you usually do, or a style you want to try out!\e"

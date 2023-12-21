@@ -21,7 +21,7 @@ file,ghost/master/pictures/picture6.pngd44a75fabced16749daf7a5053c3e3bfsize=26
 file,ghost/master/pictures/picture7.png37e785dbbca8236a2e866f7443c0a2absize=26848date=2023-07-17T17:12:36
 file,ghost/master/pictures/picture8.png8774ec03787b452a968fedb6a611dedbsize=10856date=2023-07-17T17:18:28
 file,ghost/master/saori_cpuid.dlld13370aee8e579fe2517d789dba7c45esize=225280date=2023-07-05T20:33:52
-file,ghost/master/string.dic10c2d2ec40c65e96496fdec355d8dc24size=8133date=2023-12-18T15:21:26
+file,ghost/master/string.dic0c80e2f0d175eaa68022f347e99779d2size=8164date=2023-12-20T23:22:14
 file,ghost/master/system/messagetxt/classical-chinese.txt82769639cb6060591d0797126ac5efabsize=5129date=2023-07-05T20:33:52
 file,ghost/master/system/messagetxt/english.txt5a11530a72b2e815b677c19dbd3fac03size=7112date=2023-07-05T20:33:52
 file,ghost/master/system/messagetxt/japanese.txted859fd30c66d2ad612c56ebe66324d2size=9190date=2023-07-05T20:33:52
@@ -67,7 +67,7 @@ file,ink_balloon/readme.txt357b9ba1216243010e31f18ada0229f0size=115date=2023-
 file,ink_balloon/sstp.png09de50025f5c8c619d7d3ec722fc921bsize=272date=2023-06-02T21:30:02
 file,ink_balloon/thumbnail.png1ff28a48d5913115ae7fb1aae8f56abbsize=1243date=2023-06-19T23:30:04
 file,install.txtf53ea9a9e881516dcbda8486ce6f9ac4size=896date=2023-07-05T20:33:52
-file,readme.txt11369535b66e0d24d45b81c505db99d7size=305date=2023-09-24T00:07:08
+file,readme.txt8a516a3064c13fb32cbed8807a224f42size=319date=2023-12-20T23:07:54
 file,shell/master/descript.txt8b6f5243dd73c2532444ff76de3c80d7size=5373date=2023-07-09T15:38:18
 file,shell/master/menu_background.png1a5a1110ebe6e64d60793f0908d852easize=689date=2023-07-05T20:33:52
 file,shell/master/menu_foreground.png4d8bece157d6150a4e379286acc849bcsize=689date=2023-07-05T20:33:52
